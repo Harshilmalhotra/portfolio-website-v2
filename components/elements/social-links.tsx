@@ -4,11 +4,25 @@ import { contactGithubLink, contactIgLink, contactLinkedIn } from "@/data/contac
 import { Button } from "../ui/button";
 
 export function SocialLinks() {
-    return (
-        <div className="flex gap-2">
-            <Button variant="ghost" target= "_blank" size="icon" asChild className="rounded-full"><Link href={contactGithubLink}><Github /></Link></Button>
-            <Button variant="ghost"  target="_blank" size="icon" asChild className="rounded-full"><Link href={contactLinkedIn}><Linkedin /></Link></Button>
-            <Button variant="ghost" target="_blank"  size="icon" asChild className="rounded-full"><Link href={contactIgLink}><Instagram /></Link></Button>
-        </div>
-    );
+  return (
+    <div className="flex gap-2">
+      <Button variant="ghost" size="icon" asChild className="rounded-full">
+        <Link href={contactGithubLink} target="_blank" rel="noopener noreferrer">
+          <Github />
+        </Link>
+      </Button>
+
+      <Button variant="ghost" size="icon" asChild className="rounded-full">
+        <Link href={contactLinkedIn} target="_blank" rel="noopener noreferrer">
+          <Linkedin />
+        </Link>
+      </Button>
+
+      <Button variant="ghost" size="icon" asChild className="rounded-full">
+        <Link href={contactIgLink} target="_blank" rel="noopener noreferrer">
+          <Instagram />
+        </Link>
+      </Button>
+    </div>
+  );
 }
