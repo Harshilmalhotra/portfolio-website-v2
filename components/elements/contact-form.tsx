@@ -18,8 +18,11 @@ const formSchema = z.object({
     message: z.string().min(1, "Message is required"),
 });
 
+import { useVisitorData } from "@/hooks/use-visitor-data";
+
 export function ContactForm() {
     const [open, setOpen] = useState(false);
+    const visitorData = useVisitorData();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -38,7 +41,7 @@ export function ContactForm() {
             const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(values),
+                body: JSON.stringify({ ...values, visitorData }),
             });
 
             if (!response.ok) throw new Error("Failed to send message");
