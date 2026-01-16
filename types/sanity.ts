@@ -1,0 +1,74 @@
+import { PortableTextBlock } from "sanity";
+
+export interface SanityBody {
+    _createdAt: string;
+    _id: string;
+    _rev: string;
+    _updatedAt: string;
+}
+
+export interface Image {
+    _type: "image";
+    asset: {
+        _ref: string;
+        _type: "reference";
+    };
+}
+
+export interface Profile extends SanityBody {
+    _type: "profile";
+    name: string;
+    tagline: string;
+    about: PortableTextBlock[];
+    socialLinks: SocialLink[];
+    email: string;
+    heroImage: Image;
+}
+
+export interface SocialLink {
+    _key: string;
+    platform: string;
+    url: string;
+    icon: string;
+}
+
+export interface Project extends SanityBody {
+    _type: "project";
+    name: string;
+    slug: { current: string };
+    shortDesc: string;
+    description: string;
+    demoLink: string;
+    sourceLink: string;
+    role: string;
+    technologies: string[];
+    content: PortableTextBlock[];
+    coverImageUrl: Image;
+    previews?: (Image & { alt?: string })[];
+}
+
+export interface TechStack extends SanityBody {
+    _type: "techStack";
+    name: string;
+    icon: string;
+    category: "Languages" | "Frontend" | "Backend" | "Tools" | "DevOps" | "Other";
+}
+
+export interface Experience extends SanityBody {
+    _type: "experience";
+    position: string;
+    company: string;
+    companyLink: string;
+    experienceCategory: "Full Time" | "Internship" | "Freelance";
+    startDate: string;
+    endDate: string;
+    stillWorking: boolean;
+    shortDesc: string;
+    tasks: string[];
+}
+
+export interface Stat extends SanityBody {
+    _type: "stat";
+    label: string;
+    value: string;
+}
