@@ -19,13 +19,6 @@ export function ProjectCard({ project }: { project: Project }) {
     return (
         <div className="group relative h-full block">
             <div className={cn("h-full w-full rounded-2xl border p-4 flex flex-col gap-4 bg-card/50 hover:bg-muted/50 transition-colors duration-300 overflow-hidden")}>
-                {/* Main Card Link - Stretched Overlay */}
-                {slug?.current && (
-                    <Link href={href} className="absolute inset-0 z-0" aria-label={`View project ${name}`}>
-                        <span className="sr-only">View project {name}</span>
-                    </Link>
-                )}
-
                 {/* Cover Image */}
                 <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-muted z-0">
                     {coverImageUrl ? (
@@ -42,11 +35,18 @@ export function ProjectCard({ project }: { project: Project }) {
                     )}
                 </div>
 
-                <div className="flex flex-col justify-between flex-1 gap-4 z-10 pointer-events-none">
-                    <div className="space-y-2 pointer-events-auto">
+                {/* Main Card Link - Stretched Overlay */}
+                {slug?.current && (
+                    <Link href={href} className="absolute inset-0 z-10" aria-label={`View project ${name}`}>
+                        <span className="sr-only">View project ${name}</span>
+                    </Link>
+                )}
+
+                <div className="flex flex-col justify-between flex-1 gap-4 z-20 pointer-events-none">
+                    <div className="space-y-2">
                         <div className="flex justify-between items-start gap-2">
                             <h3 className="text-xl font-medium group-hover:underline decoration-1 underline-offset-4 line-clamp-1">{name}</h3>
-                            <div className="flex gap-1 shrink-0 relative z-20">
+                            <div className="flex gap-1 shrink-0 relative z-30 pointer-events-auto">
                                 {demoLink && (
                                     <Link
                                         href={demoLink}
@@ -72,9 +72,9 @@ export function ProjectCard({ project }: { project: Project }) {
                         <p className="text-sm text-muted-foreground line-clamp-2">{shortDesc}</p>
                     </div>
 
-                    <div className="flex items-center justify-between mt-auto pointer-events-auto">
+                    <div className="flex items-center justify-between mt-auto">
                         {technologies && technologies.length > 0 && (
-                            <div className="flex flex-wrap gap-2 relative z-20">
+                            <div className="flex flex-wrap gap-2 relative z-30 pointer-events-auto">
                                 <TooltipProvider>
                                     {technologies.slice(0, 5).map((tech, i) => (
                                         <Tooltip key={i}>
