@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google"; // already exists
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${mono.variable} font-sans antialiased`}>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
