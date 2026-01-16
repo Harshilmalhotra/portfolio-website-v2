@@ -41,7 +41,7 @@ export interface Project extends SanityBody {
     demoLink: string;
     sourceLink: string;
     role: string;
-    technologies: string[];
+    technologies: TechStack[];
     content: PortableTextBlock[];
     coverImageUrl: Image;
     previews?: (Image & { alt?: string })[];
@@ -51,7 +51,9 @@ export interface TechStack extends SanityBody {
     _type: "techStack";
     name: string;
     icon: string;
+    techImage?: Image;
     category: "Languages" | "Frontend" | "Backend" | "Tools" | "DevOps" | "Other";
+    show?: boolean;
 }
 
 export interface Experience extends SanityBody {
