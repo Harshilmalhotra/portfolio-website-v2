@@ -66,7 +66,7 @@ export function ContactForm() {
                 <div className="mx-auto w-full max-w-sm p-6">
                     <DrawerHeader className="flex justify-between items-center">
                         <DrawerTitle>Contact Me</DrawerTitle>
-                        <DrawerClose><Button variant="ghost" size="icon"><X className="h-4 w-4" /></Button></DrawerClose>
+                        <DrawerClose asChild><Button variant="ghost" size="icon"><X className="h-4 w-4" /></Button></DrawerClose>
                     </DrawerHeader>
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

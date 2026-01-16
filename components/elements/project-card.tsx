@@ -15,13 +15,19 @@ import {
 export function ProjectCard({ project }: { project: Project }) {
     const { name, shortDesc, slug, role, technologies, demoLink, sourceLink, coverImageUrl } = project;
     const href = slug?.current ? `/projects/${slug.current}` : "#";
-    const Wrapper = ({ children }: any) => slug?.current ? <Link href={href} className="group relative block h-full">{children}</Link> : <div className="h-full">{children}</div>;
 
     return (
-        <Wrapper>
+        <div className="group relative h-full block">
             <div className={cn("h-full w-full rounded-2xl border p-4 flex flex-col gap-4 bg-card/50 hover:bg-muted/50 transition-colors duration-300 overflow-hidden")}>
+                {/* Main Card Link - Stretched Overlay */}
+                {slug?.current && (
+                    <Link href={href} className="absolute inset-0 z-0" aria-label={`View project ${name}`}>
+                        <span className="sr-only">View project {name}</span>
+                    </Link>
+                )}
+
                 {/* Cover Image */}
-                <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-muted">
+                <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-muted z-0">
                     {coverImageUrl ? (
                         <Image
                             src={urlFor(coverImageUrl).width(600).height(400).url()}
@@ -36,17 +42,16 @@ export function ProjectCard({ project }: { project: Project }) {
                     )}
                 </div>
 
-                <div className="flex flex-col justify-between flex-1 gap-4">
-                    <div className="space-y-2">
+                <div className="flex flex-col justify-between flex-1 gap-4 z-10 pointer-events-none">
+                    <div className="space-y-2 pointer-events-auto">
                         <div className="flex justify-between items-start gap-2">
                             <h3 className="text-xl font-medium group-hover:underline decoration-1 underline-offset-4 line-clamp-1">{name}</h3>
-                            <div className="flex gap-1 shrink-0">
+                            <div className="flex gap-1 shrink-0 relative z-20">
                                 {demoLink && (
                                     <Link
                                         href={demoLink}
                                         target="_blank"
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="p-1.5 rounded-full hover:bg-background transition-colors text-muted-foreground hover:text-primary z-10"
+                                        className="p-1.5 rounded-full hover:bg-background transition-colors text-muted-foreground hover:text-primary backdrop-blur-sm bg-background/20"
                                         title="Try Project"
                                     >
                                         <ExternalLink className="h-4 w-4" />
@@ -56,8 +61,7 @@ export function ProjectCard({ project }: { project: Project }) {
                                     <Link
                                         href={sourceLink}
                                         target="_blank"
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="p-1.5 rounded-full hover:bg-background transition-colors text-muted-foreground hover:text-primary z-10"
+                                        className="p-1.5 rounded-full hover:bg-background transition-colors text-muted-foreground hover:text-primary backdrop-blur-sm bg-background/20"
                                         title="GitHub"
                                     >
                                         <Github className="h-4 w-4" />
@@ -68,9 +72,9 @@ export function ProjectCard({ project }: { project: Project }) {
                         <p className="text-sm text-muted-foreground line-clamp-2">{shortDesc}</p>
                     </div>
 
-                    <div className="flex items-center justify-between mt-auto">
+                    <div className="flex items-center justify-between mt-auto pointer-events-auto">
                         {technologies && technologies.length > 0 && (
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-2 relative z-20">
                                 <TooltipProvider>
                                     {technologies.slice(0, 5).map((tech, i) => (
                                         <Tooltip key={i}>
@@ -106,6 +110,6 @@ export function ProjectCard({ project }: { project: Project }) {
                     </div>
                 </div>
             </div>
-        </Wrapper>
+        </div>
     );
 }
