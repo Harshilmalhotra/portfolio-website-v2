@@ -36,6 +36,7 @@ export interface Project extends SanityBody {
     _type: "project";
     name: string;
     slug: { current: string };
+    isFeatured?: boolean;
     shortDesc: string;
     description: string;
     demoLink: string;

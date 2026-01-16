@@ -17,6 +17,12 @@ export const project = defineType({
             options: { source: "name" },
         }),
         defineField({
+            name: "isFeatured",
+            title: "Featured Project",
+            type: "boolean",
+            initialValue: false,
+        }),
+        defineField({
             name: "shortDesc",
             title: "Short Description",
             type: "text",

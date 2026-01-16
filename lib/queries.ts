@@ -17,6 +17,7 @@ export const projectsQuery = groq`
         _id,
         name,
         slug,
+        isFeatured,
         shortDesc,
         description,
         demoLink,

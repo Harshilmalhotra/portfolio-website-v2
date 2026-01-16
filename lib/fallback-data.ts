@@ -96,6 +96,7 @@ export const fallbackProjects: Project[] = [
         _id: "1", _type: "project", _createdAt: "", _updatedAt: "", _rev: "",
         name: "Memvix",
         slug: { current: "memvix" },
+        isFeatured: true,
         shortDesc: "AI-powered personal memory and reminder assistant",
         description: "Memvix is an intelligent assistant that understands natural language...",
         demoLink: "https://github.com/Harshilmalhotra/memvix",
