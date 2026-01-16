@@ -5,8 +5,13 @@ import { Button } from "@/components/ui/button";
 import { IconClover } from "@/components/ui/icon-clover";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Profile } from "@/types/sanity";
 
-export function HeroSection() {
+interface HeroSectionProps {
+    profile?: Profile;
+}
+
+export function HeroSection({ profile }: HeroSectionProps) {
     return (
         <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 overflow-hidden">
             <div className="max-w-screen-lg w-full px-6 flex flex-col md:flex-row items-center gap-12 z-10">
@@ -24,10 +29,10 @@ export function HeroSection() {
                             <span className="text-xs font-medium">Available for work</span>
                         </div>
                         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-2">
-                            Harshil Malhotra
+                            {profile?.name || "Harshil Malhotra"}
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8">
-                            Fullstack Developer building digital experiences.
+                            {profile?.tagline || "Fullstack Developer building digital experiences."}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                             <Button asChild size="lg" className="rounded-full text-lg h-12 px-8">
