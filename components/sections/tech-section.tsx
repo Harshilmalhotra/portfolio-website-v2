@@ -55,12 +55,12 @@ export function TechSection({ techStack }: TechSectionProps) {
         <section className="py-24" id="tech">
             <div className="max-w-screen-lg w-full mx-auto px-6">
                 <StarHeading title="My Tech Stack" className="mb-12" />
-                <div className="flex flex-col gap-16">
+                <div className="flex flex-col gap-8">
                     {categories.length > 0 ? (
                         categories.map(category => (
-                            <div key={category} className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div key={category} className="grid grid-cols-1 md:grid-cols-4 gap-3">
                                 <h3 className="text-3xl font-medium">{category}</h3>
-                                <ul className="md:col-span-3 flex flex-wrap gap-4">
+                                <ul className="md:col-span-3 flex flex-wrap gap-3">
                                     {groupedStack[category].map(item => {
                                         const iconSrc = getIconSrc(item);
                                         return (
@@ -83,9 +83,9 @@ export function TechSection({ techStack }: TechSectionProps) {
                         ))
                     ) : (
                         defaultTechStacks.map(stack => (
-                            <div key={stack.id} className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div key={stack.id} className="grid grid-cols-1 md:grid-cols-4 gap-4">
                                 <h3 className="text-3xl font-medium">{stack.title}</h3>
-                                <ul className="md:col-span-3 flex flex-wrap gap-4">
+                                <ul className="md:col-span-3 flex flex-wrap gap-3">
                                     {stack.items.map(item => {
                                         const iconSrc = getIconSrc(item);
                                         return (
