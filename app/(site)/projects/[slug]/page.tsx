@@ -74,6 +74,19 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <Link href="/projects"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects</Link>
             </Button>
 
+            {/* Cover Image */}
+            {project.coverImageUrl && (
+                <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-muted border">
+                    <Image
+                        src={urlFor(project.coverImageUrl).width(1200).height(800).url()}
+                        alt={project.name}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </div>
+            )}
+
             <header className="space-y-4">
                 <h1 className="text-4xl font-bold">{project.name}</h1>
                 <p className="text-xl text-muted-foreground">{project.shortDesc}</p>
@@ -85,18 +98,19 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             {project.technologies.map((tech) => (
                                 <Tooltip key={tech._id || tech.name}>
                                     <TooltipTrigger asChild>
-                                        <div className="p-2 rounded-md bg-secondary/50 hover:bg-secondary transition-colors cursor-default">
+                                        <div className="flex items-center gap-2 px-3 py-2 rounded-md bg-secondary/50 hover:bg-secondary transition-colors cursor-default border">
                                             {tech.techImage ? (
                                                 <Image
                                                     src={urlFor(tech.techImage).width(24).height(24).url()}
                                                     alt={tech.name}
-                                                    width={24}
-                                                    height={24}
-                                                    className="w-6 h-6 object-contain"
+                                                    width={20}
+                                                    height={20}
+                                                    className="object-contain"
                                                 />
                                             ) : (
-                                                <span className="text-sm font-medium">{tech.name}</span>
+                                                <span className="text-xs uppercase font-bold text-muted-foreground bg-muted px-1.5 py-0.5 rounded">{tech.name.substring(0, 2)}</span>
                                             )}
+                                            <span className="text-sm font-medium">{tech.name}</span>
                                         </div>
                                     </TooltipTrigger>
                                     <TooltipContent>
