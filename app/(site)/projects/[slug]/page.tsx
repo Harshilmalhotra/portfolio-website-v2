@@ -10,6 +10,7 @@ import { PortableText } from "next-sanity";
 import { urlFor } from "@/lib/image";
 
 import { fallbackProjects } from "@/lib/fallback-data";
+import { SanityConnectionAlert } from "@/components/elements/sanity-connection-alert";
 
 // Revalidate every 60 seconds
 export const revalidate = 60;
@@ -28,6 +29,7 @@ export async function generateStaticParams() {
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     let project: Project | null = null;
+    let isError = false;
 
     try {
         const query = groq`*[_type == "project" && slug.current == $slug][0] {
@@ -38,6 +40,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         project = await client.fetch(query, { slug });
     } catch (error) {
         console.error(`Error fetching project ${slug}:`, error);
+        isError = true;
         // Check if it matches a fallback project
         project = fallbackProjects.find(p => p.slug.current === slug) || null;
     }
@@ -51,6 +54,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
     return (
         <article className="max-w-3xl mx-auto py-24 px-6 flex flex-col gap-8">
+            <SanityConnectionAlert isError={isError} />
             <Button variant="ghost" className="w-fit rounded-full pl-0 hover:pl-2 transition-all" asChild>
                 <Link href="/projects"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects</Link>
             </Button>

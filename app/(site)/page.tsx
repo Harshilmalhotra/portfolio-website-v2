@@ -8,6 +8,7 @@ import { profileQuery, projectsQuery, techStackQuery, experienceQuery, statsQuer
 import { Profile, Project, TechStack, Experience, Stat } from "@/types/sanity";
 
 import { fallbackExperience, fallbackProfile, fallbackProjects, fallbackStats, fallbackTechStack } from "@/lib/fallback-data";
+import { SanityConnectionAlert } from "@/components/elements/sanity-connection-alert";
 
 // Revalidate every 60 seconds
 export const revalidate = 60;
@@ -18,6 +19,7 @@ export default async function Home() {
   let techStack: TechStack[];
   let experience: Experience[];
   let stats: Stat[];
+  let isError = false;
 
   try {
     profile = await client.fetch(profileQuery);
@@ -27,6 +29,7 @@ export default async function Home() {
     stats = await client.fetch(statsQuery);
   } catch (error) {
     console.error("Error fetching data from Sanity:", error);
+    isError = true;
     profile = fallbackProfile;
     projects = fallbackProjects;
     techStack = fallbackTechStack;
@@ -36,6 +39,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col gap-0 pb-24">
+      <SanityConnectionAlert isError={isError} />
       <HeroSection profile={profile} />
       <AboutSection profile={profile} stats={stats} />
       <TechSection techStack={techStack} />
