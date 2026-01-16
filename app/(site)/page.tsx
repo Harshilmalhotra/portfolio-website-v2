@@ -4,44 +4,33 @@ import { TechSection } from "@/components/sections/tech-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { ProjectCard } from "@/components/elements/project-card";
 import { client } from "@/lib/sanity";
-import { profileQuery, projectsQuery, techStackQuery, experienceQuery, statsQuery } from "@/lib/queries";
-import { Profile, Project, TechStack, Experience, Stat } from "@/types/sanity";
-
-import { fallbackExperience, fallbackProfile, fallbackProjects, fallbackStats, fallbackTechStack } from "@/lib/fallback-data";
-import { SanityConnectionAlert } from "@/components/elements/sanity-connection-alert";
+import { projectsQuery, techStackQuery, experienceQuery } from "@/lib/queries";
+import { Project, TechStack, Experience } from "@/types/sanity";
+import { fallbackExperience, fallbackProjects, fallbackTechStack } from "@/lib/fallback-data";
 
 // Revalidate every 60 seconds
 export const revalidate = 60;
 
 export default async function Home() {
-  let profile: Profile;
-  let projects: Project[];
-  let techStack: TechStack[];
-  let experience: Experience[];
-  let stats: Stat[];
-  let isError = false;
-
-  try {
-    profile = await client.fetch(profileQuery);
-    projects = await client.fetch(projectsQuery);
-    techStack = await client.fetch(techStackQuery);
-    experience = await client.fetch(experienceQuery);
-    stats = await client.fetch(statsQuery);
-  } catch (error) {
-    console.error("Error fetching data from Sanity:", error);
-    isError = true;
-    profile = fallbackProfile;
-    projects = fallbackProjects;
-    techStack = fallbackTechStack;
-    experience = fallbackExperience;
-    stats = fallbackStats;
-  }
+  const [projects, techStack, experience] = await Promise.all([
+    client.fetch<Project[]>(projectsQuery).catch(err => {
+      console.error("Error fetching projects:", err);
+      return fallbackProjects;
+    }),
+    client.fetch<TechStack[]>(techStackQuery).catch(err => {
+      console.error("Error fetching techStack:", err);
+      return fallbackTechStack;
+    }),
+    client.fetch<Experience[]>(experienceQuery).catch(err => {
+      console.error("Error fetching experience:", err);
+      return fallbackExperience;
+    })
+  ]);
 
   return (
     <div className="flex flex-col gap-0 pb-24">
-      <SanityConnectionAlert isError={isError} />
-      <HeroSection profile={profile} />
-      <AboutSection profile={profile} stats={stats} />
+      <HeroSection />
+      <AboutSection />
       <TechSection techStack={techStack} />
       <ExperienceSection experiences={experience} />
       <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
