@@ -22,17 +22,22 @@ export const projectsQuery = groq`
         demoLink,
         sourceLink,
         role,
-        technologies,
+        "technologies": technologies[]->{
+            name,
+            icon,
+            techImage
+        },
         content,
         coverImageUrl
     }
 `;
 
 export const techStackQuery = groq`
-    *[_type == "techStack"] {
+    *[_type == "techStack" && (show == true || !defined(show))] {
         _id,
         name,
         icon,
+        techImage,
         category
     }
 `;
