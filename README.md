@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### Light color Palette
 
-## Getting Started
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Preview</th>
+    <th>HSL</th>
+    <th>RGB</th>
+    <th>HEX</th>
+  </tr>
 
-First, run the development server:
+  <tr>
+    <td><strong>Background</strong></td>
+    <td><div style="width:120px;height:40px;background:#F7F7F7;border:1px solid #ccc;"></div></td>
+    <td><code>0 0% 97%</code></td>
+    <td><code>rgb(247, 247, 247)</code></td>
+    <td><code>#F7F7F7</code></td>
+  </tr>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  <tr>
+    <td><strong>Foreground</strong></td>
+    <td><div style="width:120px;height:40px;background:#1A2E3E;"></div></td>
+    <td><code>211 36.6% 16.1%</code></td>
+    <td><code>rgb(26, 46, 62)</code></td>
+    <td><code>#1A2E3E</code></td>
+  </tr>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  <tr>
+    <td><strong>Primary</strong></td>
+    <td><div style="width:120px;height:40px;background:#2E6B43;"></div></td>
+    <td><code>137 41% 31%</code></td>
+    <td><code>rgb(46, 107, 67)</code></td>
+    <td><code>#2E6B43</code></td>
+  </tr>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  <tr>
+    <td><strong>Primary Hover</strong></td>
+    <td><div style="width:120px;height:40px;background:#3D8A58;"></div></td>
+    <td><code>137 41% 40%</code></td>
+    <td><code>rgb(61, 138, 88)</code></td>
+    <td><code>#3D8A58</code></td>
+  </tr>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  <tr>
+    <td><strong>Muted</strong></td>
+    <td><div style="width:120px;height:40px;background:#E6E6E6;"></div></td>
+    <td><code>0 0% 90%</code></td>
+    <td><code>rgb(230, 230, 230)</code></td>
+    <td><code>#E6E6E6</code></td>
+  </tr>
 
-## Learn More
+  <tr>
+    <td><strong>Accent</strong></td>
+    <td><div style="width:120px;height:40px;background:#1E5EFF;"></div></td>
+    <td><code>225.35 84% 49%</code></td>
+    <td><code>rgb(30, 94, 255)</code></td>
+    <td><code>#1E5EFF</code></td>
+  </tr>
 
-To learn more about Next.js, take a look at the following resources:
+  <tr>
+    <td><strong>Border</strong></td>
+    <td><div style="width:120px;height:40px;background:#D1D5DB;"></div></td>
+    <td><code>240 5.9% 83%</code></td>
+    <td><code>rgb(209, 213, 219)</code></td>
+    <td><code>#D1D5DB</code></td>
+  </tr>
+</table>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Dark color Palette
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Preview</th>
+    <th>HSL</th>
+    <th>RGB</th>
+    <th>HEX</th>
+  </tr>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  <tr>
+    <td><strong>Background</strong></td>
+    <td><div style="width:120px;height:40px;background:#151F29;"></div></td>
+    <td><code>212 31% 12%</code></td>
+    <td><code>rgb(21, 31, 41)</code></td>
+    <td><code>#151F29</code></td>
+  </tr>
+
+  <tr>
+    <td><strong>Foreground</strong></td>
+    <td><div style="width:120px;height:40px;background:#FCFCFC;border:1px solid #333;"></div></td>
+    <td><code>0 0% 99%</code></td>
+    <td><code>rgb(252, 252, 252)</code></td>
+    <td><code>#FCFCFC</code></td>
+  </tr>
+
+  <tr>
+    <td><strong>Primary</strong></td>
+    <td><div style="width:120px;height:40px;background:#A8F28B;"></div></td>
+    <td><code>96 71% 68%</code></td>
+    <td><code>rgb(168, 242, 139)</code></td>
+    <td><code>#A8F28B</code></td>
+  </tr>
+
+  <tr>
+    <td><strong>Primary Hover</strong></td>
+    <td><div style="width:120px;height:40px;background:#78B965;"></div></td>
+    <td><code>96 44% 50%</code></td>
+    <td><code>rgb(120, 185, 101)</code></td>
+    <td><code>#78B965</code></td>
+  </tr>
+
+  <tr>
+    <td><strong>Muted</strong></td>
+    <td><div style="width:120px;height:40px;background:#212C38;"></div></td>
+    <td><code>214 31% 18%</code></td>
+    <td><code>rgb(33, 44, 56)</code></td>
+    <td><code>#212C38</code></td>
+  </tr>
+
+  <tr>
+    <td><strong>Accent</strong></td>
+    <td><div style="width:120px;height:40px;background:#5DB3FF;"></div></td>
+    <td><code>211.97 100% 66%</code></td>
+    <td><code>rgb(93, 179, 255)</code></td>
+    <td><code>#5DB3FF</code></td>
+  </tr>
+
+  <tr>
+    <td><strong>Border</strong></td>
+    <td><div style="width:120px;height:40px;background:#364B5E;"></div></td>
+    <td><code>211 31.2% 30.2%</code></td>
+    <td><code>rgb(54, 75, 94)</code></td>
+    <td><code>#364B5E</code></td>
+  </tr>
+</table>
