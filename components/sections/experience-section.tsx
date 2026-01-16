@@ -16,7 +16,7 @@ export function ExperienceSection({ experiences: sanityExperiences }: Experience
 
     return (
         <section className="z-0 py-24" id="experiences">
-            <div className="max-w-screen-lg w-full mx-auto space-y-8">
+            <div className="max-w-screen-lg w-full mx-auto space-y-8 px-6">
                 <div className="space-y-6">
                     <div data-aos="fade-up">
                         <StarHeading title="My Work Experience" description="Experiences that I've had throughout my career." />

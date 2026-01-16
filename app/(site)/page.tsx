@@ -44,7 +44,7 @@ export default async function Home() {
       <AboutSection profile={profile} stats={stats} />
       <TechSection techStack={techStack} />
       <ExperienceSection experiences={experience} />
-      <section id="projects" className="py-24 px-4 max-w-6xl mx-auto">
+      <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-12">Selected Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.filter(p => p.isFeatured).slice(0, 4).map((project) => (

@@ -14,7 +14,7 @@ interface AboutSectionProps {
 export function AboutSection({ profile, stats }: AboutSectionProps) {
     return (
         <section className="py-24" id="about">
-            <div className="max-w-screen-lg w-full mx-auto">
+            <div className="max-w-screen-lg w-full mx-auto px-6">
                 <StarHeading title="About me" className="mb-8" />
                 <div className="flex flex-col gap-16">
                     <div className="flex flex-col md:flex-row gap-8">

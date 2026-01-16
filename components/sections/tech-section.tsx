@@ -53,7 +53,7 @@ export function TechSection({ techStack }: TechSectionProps) {
 
     return (
         <section className="py-24" id="tech">
-            <div className="max-w-screen-lg w-full mx-auto">
+            <div className="max-w-screen-lg w-full mx-auto px-6">
                 <StarHeading title="My Tech Stack" className="mb-12" />
                 <div className="flex flex-col gap-16">
                     {categories.length > 0 ? (
