@@ -1,0 +1,29 @@
+{"_id": "tech_c", "_type": "techStack", "name": "C", "category": "Languages"}
+{"_id": "tech_cpp", "_type": "techStack", "name": "C++", "category": "Languages"}
+{"_id": "tech_python", "_type": "techStack", "name": "Python", "category": "Languages"}
+{"_id": "tech_js", "_type": "techStack", "name": "JavaScript", "category": "Languages"}
+{"_id": "tech_dsa", "_type": "techStack", "name": "Data Structures & Algorithms", "category": "Other"}
+{"_id": "tech_oop", "_type": "techStack", "name": "Object-Oriented Programming", "category": "Other"}
+{"_id": "tech_os", "_type": "techStack", "name": "Operating Systems", "category": "Other"}
+{"_id": "tech_linux", "_type": "techStack", "name": "Linux", "category": "Tools"}
+{"_id": "tech_sql", "_type": "techStack", "name": "SQL", "category": "Languages"}
+{"_id": "tech_node", "_type": "techStack", "name": "Node.js", "category": "Backend"}
+{"_id": "tech_express", "_type": "techStack", "name": "Express.js", "category": "Backend"}
+{"_id": "tech_fastapi", "_type": "techStack", "name": "FastAPI", "category": "Backend"}
+{"_id": "tech_react", "_type": "techStack", "name": "React.js", "category": "Frontend"}
+{"_id": "tech_next", "_type": "techStack", "name": "Next.js", "category": "Frontend"}
+{"_id": "tech_tailwind", "_type": "techStack", "name": "Tailwind CSS", "category": "Frontend"}
+{"_id": "tech_postgres", "_type": "techStack", "name": "PostgreSQL", "category": "Backend"}
+{"_id": "tech_mongo", "_type": "techStack", "name": "MongoDB", "category": "Backend"}
+{"_id": "tech_supabase", "_type": "techStack", "name": "Supabase", "category": "Backend"}
+{"_id": "tech_docker", "_type": "techStack", "name": "Docker", "category": "DevOps"}
+{"_id": "tech_cicd", "_type": "techStack", "name": "CI/CD", "category": "DevOps"}
+{"_id": "tech_ghactions", "_type": "techStack", "name": "GitHub Actions", "category": "DevOps"}
+{"_id": "tech_k8s", "_type": "techStack", "name": "Kubernetes", "category": "DevOps"}
+{"_id": "tech_aws", "_type": "techStack", "name": "AWS (EC2, S3, Lambda)", "category": "DevOps"}
+{"_id": "tech_azure", "_type": "techStack", "name": "Azure", "category": "DevOps"}
+{"_id": "tech_tensorflow", "_type": "techStack", "name": "TensorFlow", "category": "Other"}
+{"_id": "tech_pytorch", "_type": "techStack", "name": "PyTorch", "category": "Other"}
+{"_id": "tech_sklearn", "_type": "techStack", "name": "Scikit-learn", "category": "Other"}
+{"_id": "tech_opencv", "_type": "techStack", "name": "OpenCV", "category": "Other"}
+{"_id": "tech_mediapipe", "_type": "techStack", "name": "MediaPipe", "category": "Other"}
