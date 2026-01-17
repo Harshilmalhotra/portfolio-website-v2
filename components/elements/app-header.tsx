@@ -10,6 +10,7 @@ const MENUS = [
     { title: "Home", link: "/" },
     { title: "Projects", link: "/projects" },
     { title: "About Me", link: "/about" },
+    { title: "Links", link: "/links" },
 ];
 
 export function Header() {
