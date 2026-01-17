@@ -13,7 +13,7 @@ export interface VisitorData {
     fingerprint: any;
 }
 
-export function useVisitorData() {
+export function useVisitorData(fetchIp: boolean = false) {
     const [data, setData] = useState<VisitorData | null>(null);
 
     useEffect(() => {
@@ -79,7 +79,7 @@ export function useVisitorData() {
                     }
                 }
 
-                if (!shouldUseCache) {
+                if (!shouldUseCache && fetchIp) {
                     const res = await fetch("https://ipapi.co/json/");
                     if (res.ok) {
                         networkData = await res.json();
@@ -199,7 +199,7 @@ export function useVisitorData() {
         };
 
         collectData();
-    }, []);
+    }, [fetchIp]);
 
     return data;
 }

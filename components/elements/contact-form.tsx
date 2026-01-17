@@ -27,10 +27,11 @@ import { useVisitorData } from "@/hooks/use-visitor-data";
     const isControlled = controlledOpen !== undefined;
     
     // Use controlled values if available, otherwise internal state
+    // Use controlled values if available, otherwise internal state
     const open = isControlled ? controlledOpen : internalOpen;
     const setOpen = isControlled && onOpenChange ? onOpenChange : setInternalOpen;
 
-    const visitorData = useVisitorData();
+    const visitorData = useVisitorData(open);
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
