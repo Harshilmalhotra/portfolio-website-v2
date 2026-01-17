@@ -20,7 +20,7 @@ const formSchema = z.object({
 
 import { useVisitorData } from "@/hooks/use-visitor-data";
 
-export function ContactForm() {
+    export function ContactForm({ children }: { children?: React.ReactNode }) {
     const [open, setOpen] = useState(false);
     const visitorData = useVisitorData();
     const form = useForm<z.infer<typeof formSchema>>({
@@ -60,7 +60,7 @@ export function ContactForm() {
     return (
         <Drawer open={open} onOpenChange={setOpen}>
             <DrawerTrigger asChild>
-                <Button className="rounded-full">Contact Me <Send className="ml-2 h-4 w-4" /></Button>
+                {children ? children : <Button className="rounded-full">Contact Me <Send className="ml-2 h-4 w-4" /></Button>}
             </DrawerTrigger>
             <DrawerContent>
                 <div className="mx-auto w-full max-w-sm p-6">
