@@ -15,6 +15,7 @@ const MENUS = [
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isContactOpen, setIsContactOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -32,8 +33,8 @@ export function Header() {
         };
 
         const handleScroll = () => {
-             if (isOpen) setIsOpen(false);
-         };
+            if (isOpen) setIsOpen(false);
+        };
 
         document.addEventListener("mousedown", handleClickOutside);
         document.addEventListener("scroll", handleScroll);
@@ -82,16 +83,23 @@ export function Header() {
                                 {menu.title}
                             </Link>
                         ))}
-                        <ContactForm>
                             <button 
                                 className="w-full px-4 py-3 hover:bg-muted rounded-xl text-center font-medium"
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    setIsContactOpen(true);
+                                }}
                             >
                                 Contact Me
                             </button>
-                        </ContactForm>
                     </motion.div>
                 )}
             </AnimatePresence>
+            
+            {/* Hidden persistent contact form for mobile actions */}
+            <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen}>
+                <span className="hidden" />
+            </ContactForm>
         </>
     );
 }

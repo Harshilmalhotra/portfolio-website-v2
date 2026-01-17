@@ -20,8 +20,16 @@ const formSchema = z.object({
 
 import { useVisitorData } from "@/hooks/use-visitor-data";
 
-    export function ContactForm({ children }: { children?: React.ReactNode }) {
-    const [open, setOpen] = useState(false);
+    export function ContactForm({ children, open: controlledOpen, onOpenChange }: { children?: React.ReactNode, open?: boolean, onOpenChange?: (open: boolean) => void }) {
+    const [internalOpen, setInternalOpen] = useState(false);
+    
+    // Determine if we are in controlled mode
+    const isControlled = controlledOpen !== undefined;
+    
+    // Use controlled values if available, otherwise internal state
+    const open = isControlled ? controlledOpen : internalOpen;
+    const setOpen = isControlled && onOpenChange ? onOpenChange : setInternalOpen;
+
     const visitorData = useVisitorData();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
