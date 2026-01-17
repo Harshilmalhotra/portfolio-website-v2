@@ -6,4 +6,6 @@ import { stat } from "./stat";
 
 import { techCategory } from "./techCategory";
 
-export const schemaTypes = [profile, project, techStack, experience, stat, techCategory];
+import { usefulLink } from "./usefulLink";
+
+export const schemaTypes = [profile, project, techStack, experience, stat, techCategory, usefulLink];

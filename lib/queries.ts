@@ -13,7 +13,7 @@ export const profileQuery = groq`
 `;
 
 export const projectsQuery = groq`
-    *[_type == "project"] | order(_createdAt desc) {
+    *[_type == "project"] | order(order asc, _createdAt desc) {
         _id,
         name,
         slug,
@@ -74,6 +74,18 @@ export const techCategoryQuery = groq`
     }
 `;
 
+export const usefulLinksQuery = groq`
+    *[_type == "usefulLink"] | order(order asc) {
+        _id,
+        name,
+        url,
+        icon,
+        label,
+        color,
+        order
+    }
+`;
+
 export const lastUpdatedQuery = groq`
-    *[_type in ["project", "profile", "techStack", "techCategory"]] | order(_updatedAt desc)[0]._updatedAt
+    *[_type in ["project", "profile", "techStack", "techCategory", "usefulLink"]] | order(_updatedAt desc)[0]._updatedAt
 `;

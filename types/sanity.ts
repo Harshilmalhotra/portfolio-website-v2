@@ -37,6 +37,7 @@ export interface Project extends SanityBody {
     name: string;
     slug: { current: string };
     isFeatured?: boolean;
+    order?: number;
     shortDesc: string;
     description: string;
     demoLink: string;
@@ -80,4 +81,14 @@ export interface Stat extends SanityBody {
     _type: "stat";
     label: string;
     value: string;
+}
+
+export interface UsefulLink extends SanityBody {
+    _type: "usefulLink";
+    name: string;
+    url: string;
+    icon?: Image;
+    label?: string;
+    color: string;
+    order: number;
 }
