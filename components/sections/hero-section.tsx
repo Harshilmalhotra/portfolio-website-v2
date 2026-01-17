@@ -3,8 +3,9 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { IconClover } from "@/components/ui/icon-clover";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Instagram, FileText, Mail } from "lucide-react";
 import { motion } from "framer-motion";
+import { contactEmail, contactGithubLink, contactLinkedIn, contactIgLink } from "@/data/contact";
 export function HeroSection() {
     return (
         <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 overflow-hidden">
@@ -39,6 +40,29 @@ export function HeroSection() {
                                     More About Me
                                 </Link>
                             </Button>
+                        </div>
+
+                        <div className="flex gap-6 mt-8 justify-center md:justify-start items-center">
+                            <Link href={contactGithubLink} target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                                <Github className="h-6 w-6" />
+                                <span className="sr-only">GitHub</span>
+                            </Link>
+                            <Link href={contactLinkedIn} target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                                <Linkedin className="h-6 w-6" />
+                                <span className="sr-only">LinkedIn</span>
+                            </Link>
+                            <Link href={contactIgLink} target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                                <Instagram className="h-6 w-6" />
+                                <span className="sr-only">Instagram</span>
+                            </Link>
+                            <Link href={`mailto:${contactEmail}`} className="text-muted-foreground hover:text-primary transition-colors">
+                                <Mail className="h-6 w-6" />
+                                <span className="sr-only">Email</span>
+                            </Link>
+                            <Link href="/resume.pdf" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                                <FileText className="h-6 w-6" />
+                                <span className="sr-only">Resume</span>
+                            </Link>
                         </div>
                     </motion.div>
                 </div>
