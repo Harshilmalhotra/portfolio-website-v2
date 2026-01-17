@@ -73,3 +73,7 @@ export const techCategoryQuery = groq`
         order
     }
 `;
+
+export const lastUpdatedQuery = groq`
+    *[_type in ["project", "profile", "techStack", "techCategory"]] | order(_updatedAt desc)[0]._updatedAt
+`;

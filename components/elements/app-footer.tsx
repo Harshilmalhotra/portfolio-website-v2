@@ -1,9 +1,35 @@
 import { SocialLinks } from "./social-links";
-export function Footer() {
+import { client } from "@/lib/sanity";
+import { lastUpdatedQuery } from "@/lib/queries";
+
+
+export async function Footer() {
+    const showLastUpdated = process.env.NEXT_PUBLIC_SHOW_LAST_UPDATED === "true";
+    let lastUpdated: string | null = null;
+
+    if (showLastUpdated) {
+        lastUpdated = await client.fetch(lastUpdatedQuery);
+    }
+
     return (
         <footer className="py-12 px-6 text-center text-muted-foreground flex flex-col items-center gap-4">
             <SocialLinks />
-            <p>&copy; 2026 Harshil. Built with Sanity & Next.js.</p>
+            <div className="flex flex-col gap-1 items-center">
+                <p>&copy; 2026 Harshil. Built with Sanity & Next.js.</p>
+                {showLastUpdated && lastUpdated && (
+                    <p className="text-xs text-muted-foreground/60">
+                        Last updated: {new Date(lastUpdated).toLocaleString("en-IN", {
+                            timeZone: "Asia/Kolkata",
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true,
+                        })} IST
+                    </p>
+                )}
+            </div>
         </footer>
     );
 }
