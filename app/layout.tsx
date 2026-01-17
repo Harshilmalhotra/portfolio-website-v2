@@ -304,6 +304,9 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [ogImage],
       creator: "@harshilmalhotra",
     },
+    icons: {
+      icon: "/harshilLogo.svg",
+    },
     robots: {
       index: true,
       follow: true,

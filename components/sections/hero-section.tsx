@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { IconClover } from "@/components/ui/icon-clover";
 import { ArrowRight, Github, Linkedin, Instagram, FileText, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { contactEmail, contactGithubLink, contactLinkedIn, contactIgLink } from "@/data/contact";
@@ -76,7 +76,13 @@ export function HeroSection() {
                     >
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 blur-3xl rounded-full" />
                         <div className="relative bg-background border rounded-2xl p-8 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-                            <IconClover className="w-48 h-48 md:w-64 md:h-64 text-primary animate-spin-[10s]" />
+                             <Image 
+                                src="/harshilLogo.svg" 
+                                alt="Harshil Logo" 
+                                width={320} 
+                                height={320} 
+                                className="w-64 h-64 md:w-80 md:h-80 object-contain animate-spin-[10s]"
+                            />
                         </div>
                     </motion.div>
                 </div>

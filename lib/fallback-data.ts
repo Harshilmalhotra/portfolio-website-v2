@@ -25,7 +25,7 @@ export const fallbackProfile: Profile = {
 };
 
 export const fallbackStats: Stat[] = [
-    { _id: "1", _type: "stat", _createdAt: "", _updatedAt: "", _rev: "", label: "Years experience", value: "3+" },
+    { _id: "1", _type: "stat", _createdAt: "", _updatedAt: "", _rev: "", label: "Years of experience", value: "3+" },
     { _id: "2", _type: "stat", _createdAt: "", _updatedAt: "", _rev: "", label: "Projects delivered", value: "5+" },
     { _id: "3", _type: "stat", _createdAt: "", _updatedAt: "", _rev: "", label: "Satisfaction", value: "99%" },
 ];

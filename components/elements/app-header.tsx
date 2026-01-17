@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/elements/contact-form";
 import { useState, useEffect, useRef } from "react";
@@ -47,8 +48,10 @@ export function Header() {
 
     return (
         <>
-            <header className="fixed top-0 left-4 right-4 md:left-0 md:right-0 z-50 px-6 py-3 flex justify-between items-center bg-background/80 backdrop-blur-md max-w-screen-lg mx-auto mt-4 rounded-full border">
-                <Link href="/" className="font-bold text-lg">Harshil</Link>
+            <header className="fixed top-0 left-4 right-4 md:left-0 md:right-0 z-50 px-4 py-2 flex justify-between items-center bg-background/80 backdrop-blur-md max-w-screen-lg mx-auto mt-4 rounded-full border">
+                <Link href="/" className="font-bold text-lg">
+                    <Image src="/harshilLogo.svg" alt="Harshil Logo" width={45} height={45} className="w-12 h-12" />
+                </Link>
                 <nav className="hidden md:flex gap-1">
                     {MENUS.map(menu => (
                         <Link key={menu.link} href={menu.link} className="px-4 py-2 hover:bg-muted rounded-full">

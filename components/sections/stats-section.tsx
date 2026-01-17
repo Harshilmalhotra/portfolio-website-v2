@@ -6,7 +6,7 @@ interface StatsSectionProps {
 
 export function StatsSection({ stats }: StatsSectionProps) {
     const defaultStats = [
-        { label: "Years experience", value: "3+" },
+        { label: "Years of experience", value: "3+" },
         { label: "Projects delivered", value: "5+" },
         { label: "Satisfaction", value: "99%" },
     ];
