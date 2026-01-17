@@ -4,15 +4,15 @@ import { TechSection } from "@/components/sections/tech-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { ProjectCard } from "@/components/elements/project-card";
 import { client } from "@/lib/sanity";
-import { projectsQuery, techStackQuery, experienceQuery } from "@/lib/queries";
-import { Project, TechStack, Experience } from "@/types/sanity";
+import { projectsQuery, techStackQuery, experienceQuery, techCategoryQuery } from "@/lib/queries";
+import { Project, TechStack, Experience, TechCategory } from "@/types/sanity";
 import { fallbackExperience, fallbackProjects, fallbackTechStack } from "@/lib/fallback-data";
 
 // Revalidate every 60 seconds
 export const revalidate = 60;
 
 export default async function Home() {
-  const [projects, techStack, experience] = await Promise.all([
+  const [projects, techStack, experience, techCategories] = await Promise.all([
     client.fetch<Project[]>(projectsQuery).catch(err => {
       console.error("Error fetching projects:", err);
       return fallbackProjects;
@@ -24,6 +24,10 @@ export default async function Home() {
     client.fetch<Experience[]>(experienceQuery).catch(err => {
       console.error("Error fetching experience:", err);
       return fallbackExperience;
+    }),
+    client.fetch<TechCategory[]>(techCategoryQuery).catch(err => {
+        console.error("Error fetching tech categories:", err);
+        return [];
     })
   ]);
 
@@ -31,7 +35,7 @@ export default async function Home() {
     <div className="flex flex-col gap-0 pb-24">
       <HeroSection />
       <AboutSection />
-      <TechSection techStack={techStack} />
+      <TechSection techStack={techStack} categories={techCategories} />
       <ExperienceSection experiences={experience} />
       <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-12">Selected Projects</h2>

@@ -39,7 +39,7 @@ export const techStackQuery = groq`
         name,
         icon,
         techImage,
-        category
+        "category": coalesce(categoryRef->title, category)
     }
 `;
 
@@ -63,5 +63,13 @@ export const statsQuery = groq`
         _id,
         label,
         value
+    }
+`;
+
+export const techCategoryQuery = groq`
+    *[_type == "techCategory"] | order(order asc) {
+        _id,
+        title,
+        order
     }
 `;

@@ -25,9 +25,18 @@ export const techStack = defineType({
             },
         }),
         defineField({
+            name: "categoryRef",
+            title: "Category Reference",
+            type: "reference",
+            to: [{ type: "techCategory" }],
+            description: "Select the category for this tech stack item. Overrides the legacy Category field.",
+        }),
+        defineField({
             name: "category",
-            title: "Category",
+            title: "Legacy Category",
             type: "string",
+            readOnly: true,
+            description: "Deprecated. Please use Category Reference instead.",
             options: {
                 list: [
                     { title: 'Frontend', value: 'Frontend' },

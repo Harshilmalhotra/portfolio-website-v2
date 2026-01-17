@@ -53,8 +53,14 @@ export interface TechStack extends SanityBody {
     name: string;
     icon: string;
     techImage?: Image;
-    category: "Languages" | "Frontend" | "Backend" | "Tools" | "DevOps" | "Other";
+    category: string;
     show?: boolean;
+}
+
+export interface TechCategory extends SanityBody {
+    _type: "techCategory";
+    title: string;
+    order: number;
 }
 
 export interface Experience extends SanityBody {
