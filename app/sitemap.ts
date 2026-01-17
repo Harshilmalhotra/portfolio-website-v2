@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static routes
   const routes = ["", "/about", "/projects", "/dashboard", "/palette"].map(
     (route) => ({
-      url: `https://harshil.is-a.dev${route}`,
+      url: `https://harshilm.vercel.app${route}`,
       lastModified: new Date().toISOString().split("T")[0],
       changeFrequency: "weekly" as const,
       priority: route === "" ? 1 : 0.8,
@@ -20,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Dynamic routes (Projects)
   const projectRoutes = projects.map((project: any) => ({
-    url: `https://harshil.is-a.dev/projects/${project.slug.current}`,
+    url: `https://harshilm.vercel.app/projects/${project.slug.current}`,
     lastModified: project._updatedAt.split("T")[0],
     changeFrequency: "weekly" as const,
     priority: 0.6,

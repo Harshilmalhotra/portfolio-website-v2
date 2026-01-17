@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/studio/"],
     },
-    sitemap: "https://harshil.is-a.dev/sitemap.xml",
+    sitemap: "https://harshilm.vercel.app/sitemap.xml",
   };
 }

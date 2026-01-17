@@ -54,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     keywords,
     authors: [{ name: profile.name || "Harshil Malhotra", url: linkedIn || github }],
-    metadataBase: new URL("https://harshil.is-a.dev"),
+    metadataBase: new URL("https://harshilm.vercel.app"),
     alternates: {
       canonical: "/",
       languages: {
@@ -64,7 +64,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: "https://harshil.is-a.dev",
+      url: "https://harshilm.vercel.app",
       siteName: `${profile.name || "Harshil Malhotra"} Portfolio`,
       images: [
         {
@@ -111,7 +111,7 @@ export default async function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.name || "Harshil Malhotra",
-    url: "https://harshil.is-a.dev",
+    url: "https://harshilm.vercel.app",
     image: profile.heroImage ? urlFor(profile.heroImage).url() : "",
     sameAs: profile.socialLinks?.map((s: any) => s.url) || [],
     jobTitle: "Fullstack Developer",
