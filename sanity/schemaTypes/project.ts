@@ -23,6 +23,12 @@ export const project = defineType({
             initialValue: false,
         }),
         defineField({
+            name: "order",
+            title: "Order",
+            type: "number",
+            initialValue: 0,
+        }),
+        defineField({
             name: "shortDesc",
             title: "Short Description",
             type: "text",
