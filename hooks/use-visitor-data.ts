@@ -59,13 +59,42 @@ export function useVisitorData() {
 
             // --- Network (IP - Client Side) ---
             let networkData: any = {};
+            const IP_CACHE_KEY = 'user_ip_data';
+            const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
+
             try {
-                const res = await fetch("https://ipapi.co/json/");
-                if (res.ok) {
-                    networkData = await res.json();
+                const cached = localStorage.getItem(IP_CACHE_KEY);
+                const now = Date.now();
+                let shouldUseCache = false;
+
+                if (cached) {
+                    try {
+                        const parsed = JSON.parse(cached);
+                        if (parsed && parsed.timestamp && (now - parsed.timestamp < CACHE_DURATION)) {
+                            networkData = parsed.data;
+                            shouldUseCache = true;
+                        }
+                    } catch (err) {
+                        // invalid cache
+                    }
+                }
+
+                if (!shouldUseCache) {
+                    const res = await fetch("https://ipapi.co/json/");
+                    if (res.ok) {
+                        networkData = await res.json();
+                        try {
+                            localStorage.setItem(IP_CACHE_KEY, JSON.stringify({
+                                timestamp: now,
+                                data: networkData
+                            }));
+                        } catch (e) {
+                            // storage quota exceeded or other error
+                        }
+                    }
                 }
             } catch (e) {
-                // ignore
+                // ignore fetch errors
             }
 
             // --- Network (Connection API) ---
