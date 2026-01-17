@@ -333,7 +333,11 @@ export default async function RootLayout({
     name: profile.name || "Harshil Malhotra",
     url: "https://harshilm.vercel.app",
     image: profile.heroImage ? urlFor(profile.heroImage).url() : "",
-    sameAs: profile.socialLinks?.map((s: any) => s.url) || [],
+    sameAs: [
+      ...(profile.socialLinks?.map((s: any) => s.url) || []),
+      "https://www.linkedin.com/in/harshil-malhotra", // Fallback/Explicit
+      "https://github.com/Harshilmalhotra",
+    ].filter((v, i, a) => a.indexOf(v) === i), // Unique values
     jobTitle: "Fullstack Developer",
     worksFor: {
       "@type": "Organization",
