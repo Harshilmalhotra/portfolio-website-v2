@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
     ...techStack.map((t: any) => t.name),
   ];
 
-  export const keywords = [
+  const keywords = [
   // Identity & Name Variations
   "Harshil Malhotra",
   "Harshil",
