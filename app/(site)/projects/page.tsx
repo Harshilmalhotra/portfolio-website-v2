@@ -9,6 +9,13 @@ import { SanityConnectionAlert } from "@/components/elements/sanity-connection-a
 // Revalidate every 60 seconds
 export const revalidate = 60;
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Showcase of projects and experiments by Harshil Malhotra.",
+};
+
 export default async function ProjectsPage() {
     let projects: Project[];
     let isError = false;

@@ -2,13 +2,14 @@ import { MetadataRoute } from "next";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity";
 
-const query = groq`*[]`;
+const query = groq`*[_type == "project" && defined(slug.current)] {
+  "slug": slug.current,
+  _updatedAt
+}`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const data = await client.fetch(query);
-  const projects = data.filter((d: any) => d._type === "project") || [];
+  const projects = await client.fetch(query);
 
-  // Static routes
   const routes = ["", "/about", "/projects", "/dashboard", "/palette"].map(
     (route) => ({
       url: `https://harshilm.vercel.app${route}`,
@@ -18,9 +19,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
-  // Dynamic routes (Projects)
   const projectRoutes = projects.map((project: any) => ({
-    url: `https://harshilm.vercel.app/projects/${project.slug.current}`,
+    url: `https://harshilm.vercel.app/projects/${project.slug}`,
     lastModified: project._updatedAt.split("T")[0],
     changeFrequency: "weekly" as const,
     priority: 0.6,

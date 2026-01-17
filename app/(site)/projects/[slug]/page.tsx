@@ -34,6 +34,19 @@ export async function generateStaticParams() {
     }
 }
 
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const query = groq`*[_type == "project" && slug.current == $slug][0].name`;
+    const projectName = await client.fetch(query, { slug });
+
+    return {
+        title: `Projects | ${projectName || "Project"}`,
+        description: `Deep dive into ${projectName || "this project"}.`,
+    };
+}
+
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     let project: Project | null = null;

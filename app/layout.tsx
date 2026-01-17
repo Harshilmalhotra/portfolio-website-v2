@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const experience = data.filter((d: any) => d._type === "experience") || [];
   const techStack = data.filter((d: any) => d._type === "techStack") || [];
 
-  const title = profile.name ? `${profile.name} | Helper of GOD` : "Harshil Malhotra | Portfolio";
+  const title = profile.name ? `${profile.name} | Portfolio` : "Harshil Malhotra | Portfolio";
   const description = profile.tagline || profile.shortDesc || "Fullstack Developer Portfolio";
 
   // Generate dynamic keywords
@@ -48,8 +48,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: {
-      default: title,
-      template: `%s | ${profile.name || "Harshil Malhotra"}`,
+      default: "Harshil Malhotra | Portfolio",
+      template: "Harshil Malhotra | Portfolio | %s",
     },
     description,
     keywords,
