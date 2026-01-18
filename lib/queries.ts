@@ -97,12 +97,44 @@ export const certificationsQuery = groq`
         company,
         issueDate,
         description,
-        issueDate,
-        description,
         skills,
         image,
         link,
         order,
         isFeatured
+    }
+`;
+
+export const searchEverythingQuery = groq`
+    {
+        "projects": *[_type == "project"] {
+            _id, 
+            name, 
+            "slug": slug.current, 
+            description, 
+            "technologies": technologies[]->name
+        },
+        "experience": *[_type == "experience"] {
+            _id, 
+            company, 
+            position, 
+            startDate,
+            endDate
+        },
+        "tech": *[_type == "techStack"] {
+            _id, 
+            name,
+            "category": coalesce(categoryRef->title, category)
+        },
+        "certifications": *[_type == "certification"] {
+            _id, 
+            title,
+            company
+        },
+        "links": *[_type == "usefulLink"] {
+            _id,
+            name,
+            url
+        }
     }
 `;
