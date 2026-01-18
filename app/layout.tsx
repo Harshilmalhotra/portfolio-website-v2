@@ -324,6 +324,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 import { SanityConnectionAlert } from "@/components/elements/sanity-connection-alert";
 import { ScrollToTop } from "@/components/elements/scroll-to-top";
+import { SearchCommand } from "@/components/elements/search-command";
+import { searchEverythingQuery } from "@/lib/queries";
+import { SearchResults } from "@/types/search";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 // ...
 
@@ -333,6 +337,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const data = await sanityFetch<any[]>({ query, fallback: null });
+  const searchData = await sanityFetch<SearchResults>({ query: searchEverythingQuery, fallback: {} as SearchResults }) || {} as SearchResults;
+
   const isError = data === null;
   const validData = data || [];
   
@@ -365,9 +371,17 @@ export default async function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
-        <SanityConnectionAlert isError={isError} />
-        <ScrollToTop />
-        {children}
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+        >
+            <SanityConnectionAlert isError={isError} />
+            <ScrollToTop />
+            <SearchCommand data={searchData} />
+            {children}
+        </ThemeProvider>
         <SpeedInsights />
         <Analytics />
       </body>

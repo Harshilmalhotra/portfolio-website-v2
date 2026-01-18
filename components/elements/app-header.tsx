@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ContactForm } from "@/components/elements/contact-form";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -22,6 +22,13 @@ export function Header() {
     const menuRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
     const pathname = usePathname();
+
+    const triggerSearch = () => {
+        const searchTrigger = document.getElementById("search-trigger");
+        if (searchTrigger) {
+            searchTrigger.click();
+        }
+    };
 
     const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         if (pathname === href && href === "/") {
@@ -66,7 +73,7 @@ export function Header() {
                 <Link href="/" className="font-bold text-lg" onClick={(e) => handleScrollToTop(e, "/")}>
                     <Image src="/harshilLogo.svg" alt="Harshil Logo" width={45} height={45} className="w-12 h-12" />
                 </Link>
-                <nav className="hidden md:flex gap-1">
+                <nav className="hidden md:flex gap-1 items-center">
                     {MENUS.map(menu => (
                         <Link 
                             key={menu.link} 
@@ -77,6 +84,13 @@ export function Header() {
                             {menu.title}
                         </Link>
                     ))}
+                    <button
+                        onClick={triggerSearch}
+                        className="p-2 hover:bg-muted rounded-full ml-1"
+                        aria-label="Search"
+                    >
+                        <Search className="w-5 h-5" />
+                    </button>
                 </nav>
                 <div className="hidden md:block">
                     <ContactForm />
@@ -108,6 +122,16 @@ export function Header() {
                                 {menu.title}
                             </Link>
                         ))}
+                            <button 
+                                className="w-full px-4 py-3 hover:bg-muted rounded-xl text-center font-medium flex items-center justify-center gap-2"
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    triggerSearch();
+                                }}
+                            >
+                                <Search className="w-4 h-4" />
+                                Search
+                            </button>
                             <button 
                                 className="w-full px-4 py-3 hover:bg-muted rounded-xl text-center font-medium"
                                 onClick={() => {
