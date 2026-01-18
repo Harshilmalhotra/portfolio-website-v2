@@ -1,5 +1,5 @@
 import { SocialLinks } from "./social-links";
-import { client } from "@/lib/sanity";
+import { sanityFetch } from "@/lib/sanity.server";
 import { lastUpdatedQuery } from "@/lib/queries";
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ export async function Footer() {
     let lastUpdated: string | null = null;
 
     if (showLastUpdated) {
-        lastUpdated = await client.fetch(lastUpdatedQuery);
+        lastUpdated = await sanityFetch<string>({ query: lastUpdatedQuery, fallback: null });
     }
 
     return (

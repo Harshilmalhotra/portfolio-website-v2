@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { groq } from "next-sanity";
 import { Inter, JetBrains_Mono } from "next/font/google"; // already exists
 import { client, urlFor } from "@/lib/sanity";
+import { sanityFetch } from "@/lib/sanity.server";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -12,7 +13,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 const query = groq`*[]`;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await client.fetch(query);
+  const data = await sanityFetch<any[]>({ query, fallback: [] }) || [];
   const profile = data.find((d: any) => d._type === "profile") || {};
   const projects = data.filter((d: any) => d._type === "project") || [];
   const experience = data.filter((d: any) => d._type === "experience") || [];
@@ -321,13 +322,20 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+import { SanityConnectionAlert } from "@/components/elements/sanity-connection-alert";
+
+// ...
+
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const data = await client.fetch(query);
-  const profile = data.find((d: any) => d._type === "profile") || {};
+  const data = await sanityFetch<any[]>({ query, fallback: null });
+  const isError = data === null;
+  const validData = data || [];
+  
+  const profile = validData.find((d: any) => d._type === "profile") || {};
   
   // JSON-LD for Person
   const jsonLd = {
@@ -356,6 +364,7 @@ export default async function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
+        <SanityConnectionAlert isError={isError} />
         {children}
         <SpeedInsights />
         <Analytics />

@@ -31,11 +31,15 @@ const getTextColorClass = (bgClass: string) => {
   }
 };
 
+import { sanityFetch } from "@/lib/sanity.server";
+
+// ... existing imports 
+
 export default async function LinksPage() {
-  const links = await client.fetch<UsefulLink[]>(usefulLinksQuery).catch((err) => {
-    console.error("Error fetching useful links:", err);
-    return [];
-  });
+  const links = await sanityFetch<UsefulLink[]>({ 
+      query: usefulLinksQuery, 
+      fallback: [] 
+  }) || [];
 
   return (
     <div className="container mx-auto max-w-md py-24 px-6 min-h-[80vh]">

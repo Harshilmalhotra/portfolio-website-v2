@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ProjectPreviewCarousel } from "@/components/elements/project-preview-carousel";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { client } from "@/lib/sanity";
+import { sanityFetch } from "@/lib/sanity.server";
 import { groq, PortableText, type PortableTextComponents } from "next-sanity";
 import { Project } from "@/types/sanity";
 import { urlFor } from "@/lib/image";
@@ -18,20 +19,15 @@ import {
 } from "@/components/ui/tooltip";
 
 import { fallbackProjects } from "@/lib/fallback-data";
-import { SanityConnectionAlert } from "@/components/elements/sanity-connection-alert";
 
 // Revalidate every 60 seconds
 export const revalidate = 60;
 
 export async function generateStaticParams() {
-    try {
-        const query = groq`*[_type == "project"]{ "slug": slug.current }`;
-        const projects = await client.fetch(query);
-        return projects.map((p: { slug: string }) => ({ slug: p.slug }));
-    } catch (error) {
-        console.error("Error in generateStaticParams:", error);
-        return [];
-    }
+    const query = groq`*[_type == "project"]{ "slug": slug.current }`;
+    // We can use sanityFetch here too although it's build time.
+    const projects = await sanityFetch<any[]>({ query, fallback: [] }) || [];
+    return projects.map((p: { slug: string }) => ({ slug: p.slug }));
 }
 
 import { Metadata } from "next";
@@ -39,7 +35,7 @@ import { Metadata } from "next";
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const query = groq`*[_type == "project" && slug.current == $slug][0].name`;
-    const projectName = await client.fetch(query, { slug });
+    const projectName = await sanityFetch<string>({ query, params: { slug }, fallback: "Project" });
 
     return {
         title: `Projects | ${projectName || "Project"}`,
@@ -49,11 +45,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    let project: Project | null = null;
-    let isError = false;
-
-    try {
-        const query = groq`*[_type == "project" && slug.current == $slug][0] {
+    
+    // Find fallback first
+    const fallback = fallbackProjects.find(p => p.slug.current === slug) as unknown as Project;
+    
+    let project: Project | null = await sanityFetch<Project>({
+        query: groq`*[_type == "project" && slug.current == $slug][0] {
             ...,
             "technologies": technologies[]->{
                 name,
@@ -62,18 +59,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             },
             content[],
             previews
-        }`;
-        project = await client.fetch(query, { slug });
-    } catch (error) {
-        console.error(`Error fetching project ${slug}:`, error);
-        isError = true;
-        // Check if fallback exists
-        const fallback = fallbackProjects.find(p => p.slug.current === slug);
-        if (fallback) {
-            // Cast fallback to Project, noting types might be slightly different for local data
-            project = fallback as unknown as Project;
-        }
-    }
+        }`,
+        params: { slug },
+        fallback: fallback
+    });
+
+    const isError = project === fallback && !!fallback;
+
+    if (!project) notFound();
 
     if (!project) notFound();
 
@@ -84,7 +77,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
     return (
         <article className="max-w-3xl mx-auto py-24 px-6 flex flex-col gap-8">
-            <SanityConnectionAlert isError={isError} />
             <Button variant="ghost" className="w-fit rounded-full pl-0 hover:pl-2 transition-all" asChild>
                 <Link href="/projects"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects</Link>
             </Button>

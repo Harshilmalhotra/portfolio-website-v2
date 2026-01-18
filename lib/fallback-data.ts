@@ -21,7 +21,7 @@ export const fallbackProfile: Profile = {
     ] as any, // detailed PortableText structure omitted for brevity in fallback
     socialLinks: [],
     email: "harshil@example.com",
-    heroImage: { _type: "image", asset: { _ref: "", _type: "reference" } },
+    heroImage: undefined,
 };
 
 export const fallbackStats: Stat[] = [
@@ -63,6 +63,7 @@ export const fallbackProjects: Project[] = [
         role: "Founder & Full Stack Engineer",
         technologies: [],
         content: [],
-        coverImageUrl: { _type: "image", asset: { _ref: "", _type: "reference" } },
+        // coverImageUrl: { _type: "image", asset: { _ref: "", _type: "reference" } },
+        coverImageUrl: undefined,
     }
 ];

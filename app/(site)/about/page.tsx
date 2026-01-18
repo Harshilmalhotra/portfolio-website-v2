@@ -14,11 +14,15 @@ export const metadata: Metadata = {
 // Revalidate every 60 seconds
 export const revalidate = 60;
 
+import { sanityFetch } from "@/lib/sanity.server";
+
+// ... existing imports
+
 export default async function AboutPage() {
-    const experiences = await client.fetch<Experience[]>(experienceQuery).catch(err => {
-        console.error("Error fetching experience:", err);
-        return fallbackExperience;
-    });
+    const experiences = await sanityFetch<Experience[]>({ 
+        query: experienceQuery, 
+        fallback: fallbackExperience 
+    }) || fallbackExperience;
 
     return (
         <div className="flex flex-col gap-12 pb-24">

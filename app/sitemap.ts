@@ -7,8 +7,12 @@ const query = groq`*[_type == "project" && defined(slug.current)] {
   _updatedAt
 }`;
 
+import { sanityFetch } from "@/lib/sanity.server";
+
+// ...
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const projects = await client.fetch(query);
+  const projects = await sanityFetch<any[]>({ query, fallback: [] }) || [];
 
   const routes = ["", "/about", "/projects", "/dashboard", "/palette"].map(
     (route) => ({
