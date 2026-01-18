@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ContactForm } from "@/components/elements/contact-form";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
@@ -20,6 +21,18 @@ export function Header() {
     const [isContactOpen, setIsContactOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
+    const pathname = usePathname();
+
+    const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (pathname === href && href === "/") {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+            setIsOpen(false);
+        }
+    };
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -50,12 +63,17 @@ export function Header() {
     return (
         <>
             <header className="fixed top-0 left-4 right-4 md:left-0 md:right-0 z-50 px-4 py-2 flex justify-between items-center bg-background/80 backdrop-blur-md max-w-screen-lg mx-auto mt-4 rounded-full border">
-                <Link href="/" className="font-bold text-lg">
+                <Link href="/" className="font-bold text-lg" onClick={(e) => handleScrollToTop(e, "/")}>
                     <Image src="/harshilLogo.svg" alt="Harshil Logo" width={45} height={45} className="w-12 h-12" />
                 </Link>
                 <nav className="hidden md:flex gap-1">
                     {MENUS.map(menu => (
-                        <Link key={menu.link} href={menu.link} className="px-4 py-2 hover:bg-muted rounded-full">
+                        <Link 
+                            key={menu.link} 
+                            href={menu.link} 
+                            className="px-4 py-2 hover:bg-muted rounded-full"
+                            onClick={(e) => handleScrollToTop(e, menu.link)}
+                        >
                             {menu.title}
                         </Link>
                     ))}
@@ -81,7 +99,10 @@ export function Header() {
                             <Link 
                                 key={menu.link} 
                                 href={menu.link} 
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => {
+                                    handleScrollToTop(e, menu.link);
+                                    setIsOpen(false);
+                                }}
                                 className="px-4 py-3 hover:bg-muted rounded-xl text-center font-medium"
                             >
                                 {menu.title}

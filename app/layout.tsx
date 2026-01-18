@@ -323,6 +323,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 import { SanityConnectionAlert } from "@/components/elements/sanity-connection-alert";
+import { ScrollToTop } from "@/components/elements/scroll-to-top";
 
 // ...
 
@@ -365,6 +366,7 @@ export default async function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
         <SanityConnectionAlert isError={isError} />
+        <ScrollToTop />
         {children}
         <SpeedInsights />
         <Analytics />
