@@ -67,3 +67,30 @@ export const fallbackProjects: Project[] = [
         coverImageUrl: undefined,
     }
 ];
+
+export const fallbackCertifications: import("@/types/sanity").Certification[] = [
+    {
+        _id: "cert1", _type: "certification", _createdAt: "", _updatedAt: "", _rev: "",
+        title: "Certified Agentforce Specialist",
+        company: "Salesforce",
+        issueDate: "2025-12-01",
+        description: "Certified Agentforce Specialists are responsible for managing and optimizing Agentforce and have a deep understanding of both Salesforce platform configuration and Agentforce capabilities.",
+        image: "/agentforce.png",
+        skills: ["Agentforce", "Salesforce Platform", "AI Configuration"],
+        order: 1,
+        isFeatured: true
+    },
+    {
+        _id: "cert2", _type: "certification", _createdAt: "", _updatedAt: "", _rev: "",
+        title: "GitHub Foundations",
+        company: "GitHub",
+        issueDate: "2025-03-01",
+        description: "Demonstrated understanding of the foundational topics and concepts of collaborating, contributing, and working on GitHub.",
+        image: "/githubfoundations.svg",
+        link: "https://www.credly.com/badges/f47ced05-e2c8-469b-a1ca-e5811f442c70",
+        skills: ["Git", "GitHub", "Collaboration", "Version Control"],
+        order: 2,
+        isFeatured: true
+    }
+];
+

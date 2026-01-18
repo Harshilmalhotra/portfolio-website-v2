@@ -22,7 +22,7 @@ export interface Profile extends SanityBody {
     about: PortableTextBlock[];
     socialLinks: SocialLink[];
     email: string;
-    heroImage: Image;
+    heroImage?: Image;
 }
 
 export interface SocialLink {
@@ -45,7 +45,7 @@ export interface Project extends SanityBody {
     role: string;
     technologies: TechStack[];
     content: PortableTextBlock[];
-    coverImageUrl: Image;
+    coverImageUrl?: Image;
     previews?: (Image & { alt?: string })[];
 }
 
@@ -91,4 +91,17 @@ export interface UsefulLink extends SanityBody {
     label?: string;
     color: string;
     order: number;
+}
+
+export interface Certification extends SanityBody {
+    _type: "certification";
+    title: string;
+    company: string;
+    issueDate?: string;
+    description?: string;
+    skills?: string[];
+    image?: Image | string;
+    link?: string;
+    order?: number;
+    isFeatured?: boolean;
 }
