@@ -8,6 +8,21 @@ import { Button } from "@/components/ui/button";
 export function SearchTip() {
   const [isVisible, setIsVisible] = useState(false);
   const [hasSeen, setHasSeen] = useState(true); // Default to true to prevent flash
+  const [isBlinking, setIsBlinking] = useState(true);
+  
+  const MotionButton = motion(Button);
+
+  const playSound = () => {
+    try {
+        const audio = new Audio("/airplane-chime.mp3");
+        audio.volume = 1;
+        audio.play().catch(() => {
+           
+        });
+    } catch (e) {
+        console.error("Audio play failed", e);
+    }
+  };
 
   useEffect(() => {
     // Check local storage on mount
@@ -17,17 +32,8 @@ export function SearchTip() {
         // Delay appearance
         const timer = setTimeout(() => {
             setIsVisible(true);
-            // Play sound
-            try {
-                const audio = new Audio("data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU"); // Short placeholder, will replace with real pop
-                // actually, let's use a real short pleasant pop sound base64
-                const popSound = new Audio("https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3");
-                popSound.volume = 0.5;
-                popSound.play().catch(e => console.log("Audio play failed (user interaction needed first)", e));
-            } catch (e) {
-                console.error(e);
-            }
-        }, 2000);
+            playSound();
+        }, 4000);
         return () => clearTimeout(timer);
     }
   }, []);
@@ -51,21 +57,47 @@ export function SearchTip() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0, y: -20, scale: 0.9 }}
+          initial={{ opacity: 0, y: -50, scale: 0.3 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -20, scale: 0.9 }}
+          exit={{ opacity: 0, y: -20, scale: 0.5 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
           className="fixed top-24 right-4 z-50 flex items-center gap-2 "
         >
           <div className="relative group">
-              <Button
+              <MotionButton
                 variant="outline"
                 size="icon"
-                className="rounded-full shadow-[0_0_20px_rgba(234,179,8,0.6)] bg-background/80 backdrop-blur-sm border-yellow-500/50 hover:border-yellow-500 transition-all h-12 w-12 animate-pulse-slow"
+                className={`rounded-full bg-background/80 backdrop-blur-sm transition-all h-14 w-14 ${!isBlinking ? "animate-pulse-slow border-yellow-500/50 hover:border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.6)]" : "border-yellow-500"}`}
                 onClick={handleOpenSearch}
+                animate={isBlinking ? {
+                    boxShadow: [
+                        "0 0 20px rgba(234,179,8,0.6)", // yellow
+                        "0 0 50px rgba(249,115,22,0.9)", // orange
+                        "0 0 20px rgba(234,179,8,0.6)", // yellow
+                        "0 0 50px rgba(249,115,22,0.9)", // orange
+                        "0 0 20px rgba(234,179,8,0.6)"  // yellow
+                    ],
+                    borderColor: [
+                        "rgba(234,179,8,0.5)",
+                        "rgba(249,115,22,1)",
+                        "rgba(234,179,8,0.5)",
+                        "rgba(249,115,22,1)",
+                        "rgba(234,179,8,0.5)"
+                    ],
+                    backgroundColor: [
+                        "rgba(var(--background), 0.8)", // default
+                        "rgba(249,115,22,0.2)", // orange tint
+                        "rgba(var(--background), 0.8)", // default
+                        "rgba(249,115,22,0.2)", // orange tint
+                        "rgba(var(--background), 0.8)"  // default
+                    ]
+                } : {}}
+                transition={{ duration: 2, ease: "easeInOut" }}
+                onAnimationComplete={() => setIsBlinking(false)}
               >
-                <Lightbulb className="h-6 w-6 text-yellow-500 fill-yellow-500/20" />
+                <Lightbulb className="h-7 w-7 text-yellow-500 fill-yellow-500/20" />
                 <span className="sr-only">Search Tip</span>
-              </Button>
+              </MotionButton>
               
               <Button
                 variant="ghost" 
