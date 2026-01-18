@@ -45,17 +45,49 @@ export function SearchCommand({ data }: SearchCommandProps) {
   const router = useRouter();
   const { setTheme } = useTheme();
 
+  const [lastKeyStrokeTime, setLastKeyStrokeTime] = React.useState(0);
+  const [keystrokes, setKeystrokes] = React.useState("");
+
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
+      // Toggle with Cmd+K / Ctrl+K
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
+        return;
       }
+
+      // Ignore inputs
+      const target = e.target as HTMLElement;
+      if (
+        target.isContentEditable ||
+        target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
+        target.tagName === "SELECT"
+      ) {
+        return;
+      }
+
+      // Type to search logic ("find", "search")
+      const currentTime = Date.now();
+      if (currentTime - lastKeyStrokeTime > 1000) {
+        setKeystrokes(e.key.toLowerCase());
+      } else {
+        setKeystrokes((prev) => (prev + e.key.toLowerCase()).slice(-6));
+      }
+      setLastKeyStrokeTime(currentTime);
     };
 
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, []);
+  }, [lastKeyStrokeTime, keystrokes]);
+
+  React.useEffect(() => {
+    if (keystrokes.endsWith("find") || keystrokes.endsWith("search")) {
+      setOpen(true);
+      setKeystrokes("");
+    }
+  }, [keystrokes]);
 
   const runCommand = React.useCallback((command: () => unknown) => {
     setOpen(false);
