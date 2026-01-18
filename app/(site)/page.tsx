@@ -11,8 +11,15 @@ import { fallbackExperience, fallbackProjects } from "@/lib/fallback-data";
 // Revalidate every 60 seconds
 export const revalidate = 60;
 
+import { CertificationSection } from "@/components/sections/certification-section";
+import { certificationsQuery } from "@/lib/queries";
+import { Certification } from "@/types/sanity";
+import { fallbackCertifications } from "@/lib/fallback-data";
+
+// ... existing imports
+
 export default async function Home() {
-  const [projects, techStack, experience, techCategories] = await Promise.all([
+  const [projects, techStack, experience, techCategories, certifications] = await Promise.all([
     sanityFetch<Project[]>({ 
         query: projectsQuery, 
         fallback: fallbackProjects,
@@ -32,6 +39,11 @@ export default async function Home() {
         query: techCategoryQuery, 
         fallback: [],
         tags: ["techCategory"]
+    }),
+    sanityFetch<Certification[]>({
+        query: certificationsQuery,
+        fallback: fallbackCertifications,
+        tags: ["certification"]
     })
   ]);
 
@@ -49,6 +61,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
+      <CertificationSection certifications={(certifications || fallbackCertifications).filter(c => c.isFeatured)} />
     </div>
   );
 }

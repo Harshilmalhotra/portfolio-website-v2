@@ -87,5 +87,22 @@ export const usefulLinksQuery = groq`
 `;
 
 export const lastUpdatedQuery = groq`
-    *[_type in ["project", "profile", "techStack", "techCategory", "usefulLink"]] | order(_updatedAt desc)[0]._updatedAt
+    *[_type in ["project", "profile", "techStack", "techCategory", "usefulLink", "certification"]] | order(_updatedAt desc)[0]._updatedAt
+`;
+
+export const certificationsQuery = groq`
+    *[_type == "certification"] | order(order asc, issueDate desc) {
+        _id,
+        title,
+        company,
+        issueDate,
+        description,
+        issueDate,
+        description,
+        skills,
+        image,
+        link,
+        order,
+        isFeatured
+    }
 `;

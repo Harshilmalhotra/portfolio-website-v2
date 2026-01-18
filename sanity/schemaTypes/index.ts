@@ -7,5 +7,6 @@ import { stat } from "./stat";
 import { techCategory } from "./techCategory";
 
 import { usefulLink } from "./usefulLink";
+import { certification } from "./certification";
 
-export const schemaTypes = [profile, project, techStack, experience, stat, techCategory, usefulLink];
+export const schemaTypes = [profile, project, techStack, experience, stat, techCategory, usefulLink, certification];

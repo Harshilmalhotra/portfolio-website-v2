@@ -10,6 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const MENUS = [
     { title: "Home", link: "/" },
     { title: "Projects", link: "/projects" },
+    { title: "Certifications", link: "/certifications" },
     { title: "About Me", link: "/about" },
     { title: "Links", link: "/links" },
 ];

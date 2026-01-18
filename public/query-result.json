@@ -1,5 +1,26 @@
 [
   {
+    "_createdAt": "2026-01-17T14:42:16Z",
+    "_id": "015a6257-f817-497f-97d5-da5ad1df29ff",
+    "_originalId": "015a6257-f817-497f-97d5-da5ad1df29ff",
+    "_rev": "EU2iDf58BdMJj4Pg5L82Js",
+    "_type": "techStack",
+    "_updatedAt": "2026-01-17T14:43:06Z",
+    "categoryRef": {
+      "_ref": "category-backend-and-web",
+      "_type": "reference"
+    },
+    "name": "WebRTC",
+    "show": true,
+    "techImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-dc0e00970ec9c7275a6d49b855651872ad175958-800x800-svg",
+        "_type": "reference"
+      }
+    }
+  },
+  {
     "_createdAt": "2026-01-16T16:25:56Z",
     "_id": "06456fa8-0871-4218-a618-73c199268f05",
     "_originalId": "06456fa8-0871-4218-a618-73c199268f05",
@@ -8,6 +29,31 @@
     "_updatedAt": "2026-01-16T16:26:22Z",
     "label": "Years of experience in Development",
     "value": "3+"
+  },
+  {
+    "_createdAt": "2026-01-17T14:46:01Z",
+    "_id": "1494a5ad-5953-4c20-92c5-676e298e378e",
+    "_originalId": "1494a5ad-5953-4c20-92c5-676e298e378e",
+    "_rev": "EU2iDf58BdMJj4Pg5L9owU",
+    "_system": {
+      "base": {
+        "id": "1494a5ad-5953-4c20-92c5-676e298e378e",
+        "rev": "EU2iDf58BdMJj4Pg5L9mbO"
+      }
+    },
+    "_type": "usefulLink",
+    "_updatedAt": "2026-01-17T15:02:32Z",
+    "color": "bg-foreground",
+    "icon": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-074e7a34c486d8956562b65a247d908ee097fb07-1024x1024-svg",
+        "_type": "reference"
+      }
+    },
+    "name": "GitHub",
+    "order": 0,
+    "url": "https://github.com/Harshilmalhotra"
   },
   {
     "_createdAt": "2026-01-16T07:23:55Z",
@@ -32,6 +78,122 @@
     ]
   },
   {
+    "_createdAt": "2026-01-17T14:38:37Z",
+    "_id": "46cbd29c-130e-4b31-8cb7-2c2b5506465a",
+    "_originalId": "46cbd29c-130e-4b31-8cb7-2c2b5506465a",
+    "_rev": "9UjcUJoVjpp10HD8oYkMKf",
+    "_system": {
+      "base": {
+        "id": "46cbd29c-130e-4b31-8cb7-2c2b5506465a",
+        "rev": "EU2iDf58BdMJj4Pg5L860g"
+      }
+    },
+    "_type": "project",
+    "_updatedAt": "2026-01-17T14:52:42Z",
+    "content": [
+      {
+        "_key": "211f5d040bb9",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a5ec030bc0ed",
+            "_type": "span",
+            "marks": [],
+            "text": "Created posture and motion tracker (MediaPipe + WebRTC) with 200 ms latency for real-time user correction."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "655f90705151",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a5ec030bc0ed",
+            "_type": "span",
+            "marks": [],
+            "text": "Designed scalable Supabase backend supporting 500+ concurrent users and implemented REST APIs in Node.js."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "c499145872c4",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a5ec030bc0ed",
+            "_type": "span",
+            "marks": [],
+            "text": "Gamified platform with leaderboards and challenges, increasing user retention by 20 percent."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "73bab52cd552",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "a5ec030bc0ed",
+            "_type": "span",
+            "marks": [],
+            "text": "Maintained high code quality using Jest unit tests and automated pipelines with GitHub Actions CI."
+          }
+        ],
+        "level": 1,
+        "listItem": "bullet",
+        "markDefs": [],
+        "style": "normal"
+      }
+    ],
+    "demoLink": "https://bajaj-hackathon-frontend.vercel.app/",
+    "isFeatured": true,
+    "name": "FitSync – AI Powered Fitness Tracker ",
+    "order": 1,
+    "slug": {
+      "_type": "slug",
+      "current": "fitsync"
+    },
+    "sourceLink": "https://github.com/Harshilmalhotra/fitsync-bajaj-finserv-hackathon",
+    "technologies": [
+      {
+        "_key": "45008e108acc",
+        "_ref": "mediapipe",
+        "_type": "reference"
+      },
+      {
+        "_key": "f5906378b8e8",
+        "_ref": "supabase",
+        "_type": "reference"
+      },
+      {
+        "_key": "d764de71a2b6",
+        "_ref": "node-js",
+        "_type": "reference"
+      },
+      {
+        "_key": "375a5e84db93",
+        "_ref": "next-js",
+        "_type": "reference"
+      },
+      {
+        "_key": "16b9236b858f",
+        "_ref": "015a6257-f817-497f-97d5-da5ad1df29ff",
+        "_type": "reference"
+      }
+    ]
+  },
+  {
     "_createdAt": "2026-01-16T17:39:54Z",
     "_id": "58379590-9232-4173-a0e7-d6a41a2311a4",
     "_originalId": "58379590-9232-4173-a0e7-d6a41a2311a4",
@@ -51,24 +213,6 @@
       "_type": "image",
       "asset": {
         "_ref": "image-6b9013170b87afc220743bd14ace3bc5d5322f5e-240x240-svg",
-        "_type": "reference"
-      }
-    }
-  },
-  {
-    "_createdAt": "2026-01-16T18:07:39Z",
-    "_id": "5afc3ff2-9000-4604-94b8-c490cc48dae4",
-    "_originalId": "5afc3ff2-9000-4604-94b8-c490cc48dae4",
-    "_rev": "64VTmjBhuZupFI8RnHnbXU",
-    "_type": "techStack",
-    "_updatedAt": "2026-01-16T18:08:19Z",
-    "category": "DevOps",
-    "name": "Oracle Cloud",
-    "show": true,
-    "techImage": {
-      "_type": "image",
-      "asset": {
-        "_ref": "image-2810246e3adfb53986fd6d94f2da4d2da0682faf-100x100-svg",
         "_type": "reference"
       }
     }
@@ -311,15 +455,6 @@
     ]
   },
   {
-    "_createdAt": "2026-01-16T20:24:22Z",
-    "_id": "adf6ebe2-3dc9-46d9-889e-77b88e6f4622",
-    "_originalId": "adf6ebe2-3dc9-46d9-889e-77b88e6f4622",
-    "_rev": "EU2iDf58BdMJj4Pg5FLJ9Z",
-    "_type": "profile",
-    "_updatedAt": "2026-01-16T20:24:24Z",
-    "name": "harshil malhotra"
-  },
-  {
     "_createdAt": "2026-01-16T16:21:47Z",
     "_id": "aws",
     "_originalId": "aws",
@@ -443,16 +578,6 @@
     "title": "Cloud and Dev Ops"
   },
   {
-    "_createdAt": "2026-01-17T03:22:24Z",
-    "_id": "category-core-cs",
-    "_originalId": "category-core-cs",
-    "_rev": "9UjcUJoVjpp10HD8oX4ZNI",
-    "_type": "techCategory",
-    "_updatedAt": "2026-01-17T03:31:36Z",
-    "order": 5,
-    "title": "Core CS"
-  },
-  {
     "_createdAt": "2026-01-17T03:22:20Z",
     "_id": "category-databases",
     "_originalId": "category-databases",
@@ -489,16 +614,6 @@
     "title": "Other Tools"
   },
   {
-    "_createdAt": "2026-01-16T16:21:39Z",
-    "_id": "ci-cd",
-    "_originalId": "ci-cd",
-    "_rev": "9UjcUJoVjpp10HD8oVN2X0",
-    "_type": "techStack",
-    "_updatedAt": "2026-01-16T16:21:39Z",
-    "category": "DevOps",
-    "name": "CI/CD"
-  },
-  {
     "_createdAt": "2026-01-17T03:23:12Z",
     "_id": "css3",
     "_originalId": "css3",
@@ -522,10 +637,20 @@
     "_createdAt": "2026-01-16T17:31:23Z",
     "_id": "d23208db-6ea2-4513-b0b5-4d407e905602",
     "_originalId": "d23208db-6ea2-4513-b0b5-4d407e905602",
-    "_rev": "64VTmjBhuZupFI8RnHg172",
+    "_rev": "64VTmjBhuZupFI8RnNZBai",
+    "_system": {
+      "base": {
+        "id": "d23208db-6ea2-4513-b0b5-4d407e905602",
+        "rev": "64VTmjBhuZupFI8RnHg172"
+      }
+    },
     "_type": "techStack",
-    "_updatedAt": "2026-01-16T17:32:17Z",
+    "_updatedAt": "2026-01-18T07:00:14Z",
     "category": "DevOps",
+    "categoryRef": {
+      "_ref": "category-cloud-and-dev-ops",
+      "_type": "reference"
+    },
     "name": "Redis",
     "show": true,
     "techImage": {
@@ -540,15 +665,15 @@
     "_createdAt": "2026-01-16T16:33:55Z",
     "_id": "d2824cae-3f49-4a94-8baa-60c7cc21a7a1",
     "_originalId": "d2824cae-3f49-4a94-8baa-60c7cc21a7a1",
-    "_rev": "9UjcUJoVjpp10HD8oVgT0p",
+    "_rev": "9UjcUJoVjpp10HD8ob9TEt",
     "_system": {
       "base": {
         "id": "d2824cae-3f49-4a94-8baa-60c7cc21a7a1",
-        "rev": "64VTmjBhuZupFI8RnHnbmy"
+        "rev": "64VTmjBhuZupFI8RnL9IXg"
       }
     },
     "_type": "project",
-    "_updatedAt": "2026-01-16T18:30:02Z",
+    "_updatedAt": "2026-01-18T07:13:07Z",
     "content": [
       {
         "_key": "a230019bca01",
@@ -623,6 +748,7 @@
     "demoLink": "https://t.me/Memvix_bot",
     "isFeatured": true,
     "name": "Memvix",
+    "order": 0,
     "shortDesc": "A context-aware personal assistant with adaptive reminder strategies based on user behavior, failure-aware workflows, and multi-channel escalation, implemented using a custom scheduling engine.",
     "slug": {
       "_type": "slug",
@@ -652,23 +778,10 @@
       },
       {
         "_key": "b477b1f525ba",
-        "_ref": "5afc3ff2-9000-4604-94b8-c490cc48dae4",
+        "_ref": "oracle",
         "_type": "reference"
       }
     ]
-  },
-  {
-    "_createdAt": "2026-01-16T16:21:01Z",
-    "_id": "data-structures---algorithms",
-    "_originalId": "data-structures---algorithms",
-    "_rev": "64VTmjBhuZupFI8RnJN156",
-    "_type": "techStack",
-    "_updatedAt": "2026-01-17T03:31:51Z",
-    "categoryRef": {
-      "_ref": "category-core-cs",
-      "_type": "reference"
-    },
-    "name": "Data Structures & Algorithms"
   },
   {
     "_createdAt": "2026-01-16T16:21:38Z",
@@ -799,6 +912,89 @@
         "_type": "reference"
       }
     }
+  },
+  {
+    "_createdAt": "2026-01-17T14:48:54Z",
+    "_id": "image-074e7a34c486d8956562b65a247d908ee097fb07-1024x1024-svg",
+    "_originalId": "image-074e7a34c486d8956562b65a247d908ee097fb07-1024x1024-svg",
+    "_rev": "EU2iDf58BdMJj4Pg5L8NYu",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-01-17T14:48:54Z",
+    "assetId": "074e7a34c486d8956562b65a247d908ee097fb07",
+    "extension": "svg",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "e01.]Qayx]ozMxxvkCM{WBtRj[ayDhfPM_xuayRifkaeMxj]ayWBxv",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 1024,
+        "width": 1024
+      },
+      "hasAlpha": true,
+      "isOpaque": false,
+      "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAADS0lEQVR4nI1VzWtdVRA/pcGKhcYGXu6ZOXdm7sy52poKpaJQcWEq4p+gGwV3JupC3Ag2pm0EV5bSje7cWEtbRetXqlDXgvULElemtvjRD0TktURaSmyZe+9LKkbTgeHNu2/O7/7m4/xeCP+0oVHVokiyK3L1CpLOIttpZO23bqf9WSyrqSLJuOeGEIbCaiYit0fmsUg2CWzHUPIccr6YxBaR7Zp7G+eLyHkO2I5Gsgk/42f/BYYiOxLpDLKeQrZ+kryUJF//D1/yHM9NpPv87M2gQ/6WJA5m3yPbryi2gGznke1KkobdlSbm5fh8l/NLYvsORPdFkXua8kdHtUCyyST5a+R8Adg+ipR3Q2n7kXU2iZ5MZB+3rieR9URkPQCkLyPr+yh2DiWfimTPOFbw5ia2Y8lLEPsNyF5HrHcg6t3A9pB7LPUB98F3xGpLStV2ZHstsf3s5XtPHStEtilkm+/6chZLm0bMFEJYF0JY330ObPkZESGwveSTb8/mOZS8OwDpbGqmmZdQ7JuYqqeGh+XOsIaNjIxsKqh6HNm+TJKvebuQ7JOAZD8lyYu+EpH1OEp+sGOxlq2PZPcj6+FuK3y9FgKS9rvp/QmsbxWl3Rtu0QBkK7C9gWy/Nxik/YCsl1vK1o9kh3qp2n6rgAXRNifhZNr10kte8lmU/BeyXQXSL4Cqx+q63rAm2tjYbQXbI8j2ebuveRHJzjjDz9qhmE95AUj3+pv/F7SuN4DIVvQNEfsxSf7bMYB11tdmGlnnkPUPYJ0H1hPINu1MU7K7iqLYuNIzuKMscz3K+mhk24NsX3l1zTVlm/cV9MXeBaxHgPTbSPYOih1qSmf7EMheKESqbv/WeRxJXwTOrQq1YNeR7ZJfjkLyeOj1JCLZhPcCyN6NXE0h6UEkezuW+mxKqRwwdMaJbT9KPteU2YJd7a7eRCdnrTiAqwbppw0Y63OR9cmUZOdIXW9anmohFZC+Ci4KAzCyH0B0Zlkc3Fx6gPk+bNjZe8h2HFjfRKqeiHXdW+mhMTa9y2e8zE6+ZvzsqproTJFkoukl6QeRZJKZYZDjMZT6vKuQt8dValWBvcmGeiKxEBkvSJ72gQ3Lyr3evNmGY1k9PPhttb+AG9B0D2Vjhrz1AAAAAElFTkSuQmCC",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#1c1c24",
+          "foreground": "#fff",
+          "population": 38,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#04040c",
+          "foreground": "#fff",
+          "population": 0.25,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#1c1c24",
+          "foreground": "#fff",
+          "population": 38,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#262672",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#9b9bdd",
+          "foreground": "#000",
+          "population": 0,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#262672",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#3f3fbf",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "yPeBBQAmY4q/Q3OjRoCEhh8Gt1iKdXigRw=="
+    },
+    "mimeType": "image/svg+xml",
+    "originalFilename": "Octicons-mark-github.svg",
+    "path": "images/vkb6vupw/production/074e7a34c486d8956562b65a247d908ee097fb07-1024x1024.svg",
+    "sha1hash": "074e7a34c486d8956562b65a247d908ee097fb07",
+    "size": 974,
+    "uploadId": "lg8Eqx5nuk2HlQYuT3lwZGEz8yix4d1W",
+    "url": "https://cdn.sanity.io/images/vkb6vupw/production/074e7a34c486d8956562b65a247d908ee097fb07-1024x1024.svg"
   },
   {
     "_createdAt": "2026-01-16T16:21:05Z",
@@ -3042,6 +3238,89 @@
     "url": "https://cdn.sanity.io/images/vkb6vupw/production/c77b7399adf593490975e59582ead90cbc1ffc79-24x24.svg"
   },
   {
+    "_createdAt": "2026-01-17T14:44:12Z",
+    "_id": "image-d13a7602c073bb0213bbfe6f5a1b19ae6dfbccae-120x120-svg",
+    "_originalId": "image-d13a7602c073bb0213bbfe6f5a1b19ae6dfbccae-120x120-svg",
+    "_rev": "64VTmjBhuZupFI8RnL8mO8",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-01-17T14:44:12Z",
+    "assetId": "d13a7602c073bb0213bbfe6f5a1b19ae6dfbccae",
+    "extension": "svg",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "e30D4?emdCgNdCg3g3f6e9e.dCgOhLenh1f+eTf6g$fkdCe9g3f+hL",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 120,
+        "width": 120
+      },
+      "hasAlpha": true,
+      "isOpaque": false,
+      "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABgElEQVR4nLWUz0rDQBDGP+hF6U08FR/Cd9BDQStV6UV69BKweClSKD5B6cFudttSoZhkZ0Oex+LryG7+bxvTIl0YmC+T/Np8mRngaKcXNTCdnmK9PjH5obp0oqgBRi0IeQ3Xv8KHf2HC1rOv3XVGrTLU85pYUBuCQrgyhJCPcSSayy542AEPCFxKMP8OzL/P6i61MfGaOXAVnUGEzxC0AacN5vRmItWcBhCyZ2AGqHN9jeK6flYzsrOU5xDKgVA/SbwnEWtXvcANLsGCW3C6Mbm+lt/vGMbewHkBqKMWuEpe2fx99Q0hR5ircQE4xIL6uafUB1fDauDEaxpj45sVZtYDMXyUe6bKPyhsoP7kug2qPSpbsK2dMjAqAHd7dCDQs/tQPYHL10pPa4Erqw81TEOrPK0FLq22qe+7fwDZXp46f/dhNmrJ7JqcBlk9Hc3cY2v07D40y0B2stmN825eDx5MpHprOeg+1CtIr6LietpXs09rfaVQvSyLC/QQfazzC3hpCr9heV35AAAAAElFTkSuQmCC",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#2b4550",
+          "foreground": "#fff",
+          "population": 0.24,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#049094",
+          "foreground": "#fff",
+          "population": 0.51,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#049094",
+          "foreground": "#fff",
+          "population": 0.51,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#039395",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#7df9fc",
+          "foreground": "#000",
+          "population": 0,
+          "title": "#000"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#039395",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#04adb0",
+          "foreground": "#fff",
+          "population": 0.28,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "GtWABQAllUiXWKB6hqSToJb2NyiId4CJNw=="
+    },
+    "mimeType": "image/svg+xml",
+    "originalFilename": "mediapipe_icon.svg",
+    "path": "images/vkb6vupw/production/d13a7602c073bb0213bbfe6f5a1b19ae6dfbccae-120x120.svg",
+    "sha1hash": "d13a7602c073bb0213bbfe6f5a1b19ae6dfbccae",
+    "size": 1641,
+    "uploadId": "aMrJqlXLrUjga9Nj4BHy73ahcWQjOLS0",
+    "url": "https://cdn.sanity.io/images/vkb6vupw/production/d13a7602c073bb0213bbfe6f5a1b19ae6dfbccae-120x120.svg"
+  },
+  {
     "_createdAt": "2026-01-16T15:06:46Z",
     "_id": "image-d51560b25fed0dc50c941764c0dcce5ae2b61712-24x24-svg",
     "_originalId": "image-d51560b25fed0dc50c941764c0dcce5ae2b61712-24x24-svg",
@@ -3206,6 +3485,89 @@
     "size": 2947,
     "uploadId": "POgGooOr3DWmVkqizf7zUVUV3Z16cMkE",
     "url": "https://cdn.sanity.io/images/vkb6vupw/production/d9dd2e0533941e03e9d7ff57f24cac49dbf3216b-24x24.svg"
+  },
+  {
+    "_createdAt": "2026-01-17T14:42:55Z",
+    "_id": "image-dc0e00970ec9c7275a6d49b855651872ad175958-800x800-svg",
+    "_originalId": "image-dc0e00970ec9c7275a6d49b855651872ad175958-800x800-svg",
+    "_rev": "EU2iDf58BdMJj4Pg5L81xY",
+    "_type": "sanity.imageAsset",
+    "_updatedAt": "2026-01-17T14:42:55Z",
+    "assetId": "dc0e00970ec9c7275a6d49b855651872ad175958",
+    "extension": "svg",
+    "metadata": {
+      "_type": "sanity.imageMetadata",
+      "blurHash": "eNL41uRI001I9HMM68Tw=3-A00]x*0XfxaJB=XMxrqwwpJE*jYS*xZ",
+      "dimensions": {
+        "_type": "sanity.imageDimensions",
+        "aspectRatio": 1,
+        "height": 800,
+        "width": 800
+      },
+      "hasAlpha": true,
+      "isOpaque": false,
+      "lqip": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEDklEQVR4nK3Uf0zUZRwH8PfhCUOTpTUXNiJXJJlAJnBYp63YGptOs4W1NFvAiYU2NaOmOVkD7sv6ISwFjggRncPbkpyAAt6d3PHDu+95BgqWnBos+aHXCcrBAcf33Y4g0rngj97be8/zbM9efzzb5wEekn2ATw3wWDUQqwPS9UCZt959FfD6GWCe9w6mm3Jgrh5YqwOO6oFWPdA53lYdcKQGWGsAHp0WpgFmGoBIPVCkB24ZgFEDwPGO6oGes0BRNRDpvYuHJl47AznnAyBYn1qxPv2lgseDdp7xmdGsux+bqOecD5rMgfik40uEsRaBrMJs7pt4gpyrfviqMQRqazzUYtrTKYcLU5a8ZirynXWnHKDuX9g5gA2Q8aK/z5/XV8rODhxCNq34lOexihcQzMvwBTIuhCPTvAdq0ej/ja09UqhypCbudh2KjfOcVippVippG2+TUkm7cgV73lB6+lKX3B2uCOiiKGujBdWSBdtpRSiQad4LQbRAEN3Bec38osrOenMLrzU0stNkotNkYu94+0wmDpjqOFJvoMfyLSXbUtIqp2TFAK0wUcROQG22IMvqRJaVS4tbqb3i5L3hUf5nJA95t4FsW0Pa/EkrvHXQAiMgiE4I1mEvGFVyheX2Xro9EqeMy0Zeiydts/8GRQxRhANQizchiIP/A+imiC5AsJyAIP4BQZSiDreyvO3OtECX6yJv2t+h48IcDotjYBct3pkQGt6DYCmTpdc7FAXiaMWvPRwa8UwJ3nD9wmL7BpaKc6XfLT69wyIqacGHwHe1gfMzKjeG7i6q2bj/2D3jpascGhmZErzkauK23z7g2w0LBg8YH2m8bJIn04KgsSkp3hUXrk15peB0+iZHe10ZR3q7Sc8kKkkSB0fcdLrv8vZgL3sGnKzqMnJNfQIXlIX1LdYuKn1TuzCaBsjHhoWJCHer5Ef7dwX1DRVuomQ7QfY7SGmUbnc/r99uY41dz0MtPzO35QSzLx3nR3VZfFa7jvJCxaCsIPok8qMi/xllJmApk6DlFnk/9y4iT6WRnS1kz1W2N59kduUeri55ixFH1zH0+LsMKV3PwCOr6Ve4ktAsH4ZGcRoHFIpJMBkhTEION6ObnweRx7aStfnkT6m8nB1LVcZzfEIdzBnfR3iBBxrjRL7iRxREvTAJJmKelIQNVMHI7fMGqY4mM6PJ1CfZsW3WUNpnAY5gYeEt2cFl7gcw79mMAoUKueHzJ8FXIedmPCOpsIPJM3XS1tk3uGVmt6RChytZ1nBqx5wfwr4OzUWewghNTDvyl3ePrXkxRuTH7MZBxfPQLLv/b2Q8fL0oE/A+VdAwCeVMQgkT8LE9xT9y8f6IF5EXk4i8mCLkR1eMrd5z7suLkBPnNwH9BYD7ag9k3gGjAAAAAElFTkSuQmCC",
+      "palette": {
+        "_type": "sanity.imagePalette",
+        "darkMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#040404",
+          "foreground": "#fff",
+          "population": 25.9,
+          "title": "#fff"
+        },
+        "darkVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#049a3a",
+          "foreground": "#fff",
+          "population": 8.59,
+          "title": "#fff"
+        },
+        "dominant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#040404",
+          "foreground": "#fff",
+          "population": 25.9,
+          "title": "#fff"
+        },
+        "lightMuted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#f8faf6",
+          "foreground": "#000",
+          "population": 4.86,
+          "title": "#000"
+        },
+        "lightVibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#f2979a",
+          "foreground": "#000",
+          "population": 0.18,
+          "title": "#fff"
+        },
+        "muted": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#967a02",
+          "foreground": "#fff",
+          "population": 0,
+          "title": "#fff"
+        },
+        "vibrant": {
+          "_type": "sanity.imagePaletteSwatch",
+          "background": "#fbcc05",
+          "foreground": "#000",
+          "population": 7.89,
+          "title": "#fff"
+        }
+      },
+      "thumbHash": "phmOLQoqWHZnmYCdqJA3jPHRB1eFh4BlZw=="
+    },
+    "mimeType": "image/svg+xml",
+    "originalFilename": "webrtc-svgrepo-com.svg",
+    "path": "images/vkb6vupw/production/dc0e00970ec9c7275a6d49b855651872ad175958-800x800.svg",
+    "sha1hash": "dc0e00970ec9c7275a6d49b855651872ad175958",
+    "size": 5004,
+    "uploadId": "2bvqEzazw0NOyzdNaPxouMigEMeIQ1af",
+    "url": "https://cdn.sanity.io/images/vkb6vupw/production/dc0e00970ec9c7275a6d49b855651872ad175958-800x800.svg"
   },
   {
     "_createdAt": "2026-01-16T16:20:57Z",
@@ -3852,22 +4214,29 @@
     "_createdAt": "2026-01-16T16:22:00Z",
     "_id": "mediapipe",
     "_originalId": "mediapipe",
-    "_rev": "EU2iDf58BdMJj4Pg5HaE1Y",
+    "_rev": "9UjcUJoVjpp10HD8oYjz92",
     "_system": {
       "base": {
         "id": "mediapipe",
-        "rev": "64VTmjBhuZupFI8RnJO0JE"
+        "rev": "EU2iDf58BdMJj4Pg5HaE1Y"
       }
     },
     "_type": "techStack",
-    "_updatedAt": "2026-01-17T04:03:29Z",
+    "_updatedAt": "2026-01-17T14:44:16Z",
     "category": "Other",
     "categoryRef": {
       "_ref": "category-other-tools",
       "_type": "reference"
     },
     "name": "MediaPipe",
-    "show": true
+    "show": true,
+    "techImage": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-d13a7602c073bb0213bbfe6f5a1b19ae6dfbccae-120x120-svg",
+        "_type": "reference"
+      }
+    }
   },
   {
     "_createdAt": "2026-01-16T16:21:32Z",
@@ -3950,19 +4319,6 @@
     }
   },
   {
-    "_createdAt": "2026-01-16T16:21:02Z",
-    "_id": "object-oriented-programming",
-    "_originalId": "object-oriented-programming",
-    "_rev": "EU2iDf58BdMJj4Pg5HW4VK",
-    "_type": "techStack",
-    "_updatedAt": "2026-01-17T03:31:52Z",
-    "categoryRef": {
-      "_ref": "category-core-cs",
-      "_type": "reference"
-    },
-    "name": "Object-Oriented Programming"
-  },
-  {
     "_createdAt": "2026-01-16T16:21:59Z",
     "_id": "opencv",
     "_originalId": "opencv",
@@ -3983,30 +4339,23 @@
     }
   },
   {
-    "_createdAt": "2026-01-16T16:21:03Z",
-    "_id": "operating-systems",
-    "_originalId": "operating-systems",
-    "_rev": "64VTmjBhuZupFI8RnJN18y",
-    "_type": "techStack",
-    "_updatedAt": "2026-01-17T03:31:53Z",
-    "categoryRef": {
-      "_ref": "category-core-cs",
-      "_type": "reference"
-    },
-    "name": "Operating Systems"
-  },
-  {
     "_createdAt": "2026-01-17T03:32:08Z",
     "_id": "oracle",
     "_originalId": "oracle",
-    "_rev": "EU2iDf58BdMJj4Pg5HW5aI",
+    "_rev": "9UjcUJoVjpp10HD8ob9Yw7",
+    "_system": {
+      "base": {
+        "id": "oracle",
+        "rev": "EU2iDf58BdMJj4Pg5HW5aI"
+      }
+    },
     "_type": "techStack",
-    "_updatedAt": "2026-01-17T03:32:08Z",
+    "_updatedAt": "2026-01-18T07:13:27Z",
     "categoryRef": {
       "_ref": "category-databases",
       "_type": "reference"
     },
-    "name": "Oracle",
+    "name": "Oracle Cloud",
     "techImage": {
       "_type": "image",
       "asset": {
