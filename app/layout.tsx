@@ -328,6 +328,7 @@ import { SearchCommand } from "@/components/elements/search-command";
 import { searchEverythingQuery } from "@/lib/queries";
 import { SearchResults } from "@/types/search";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { SearchTip } from "@/components/elements/search-tip";
 
 // ...
 
@@ -363,9 +364,8 @@ export default async function RootLayout({
     },
      description: profile.tagline || "Fullstack Developer",
   };
-
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${inter.variable} ${mono.variable} font-sans antialiased`}>
         <script
             type="application/ld+json"
@@ -380,6 +380,7 @@ export default async function RootLayout({
             <SanityConnectionAlert isError={isError} />
             <ScrollToTop />
             <SearchCommand data={searchData} />
+            <SearchTip />
             {children}
         </ThemeProvider>
         <SpeedInsights />
