@@ -365,7 +365,7 @@ export default async function RootLayout({
      description: profile.tagline || "Fullstack Developer",
   };
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${inter.variable} ${mono.variable} font-sans antialiased`}>
         <script
             type="application/ld+json"
