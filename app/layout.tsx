@@ -329,6 +329,7 @@ import { searchEverythingQuery } from "@/lib/queries";
 import { SearchResults } from "@/types/search";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SearchTip } from "@/components/elements/search-tip";
+import { CacheCleaner } from "@/components/providers/cache-cleaner";
 
 // ...
 
@@ -378,6 +379,7 @@ export default async function RootLayout({
             disableTransitionOnChange
         >
             <SanityConnectionAlert isError={isError} />
+            <CacheCleaner />
             <ScrollToTop />
             <SearchCommand data={searchData} />
             <SearchTip />
