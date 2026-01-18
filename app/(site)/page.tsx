@@ -6,7 +6,7 @@ import { ProjectCard } from "@/components/elements/project-card";
 import { client } from "@/lib/sanity";
 import { projectsQuery, techStackQuery, experienceQuery, techCategoryQuery } from "@/lib/queries";
 import { Project, TechStack, Experience, TechCategory } from "@/types/sanity";
-import { fallbackExperience, fallbackProjects, fallbackTechStack } from "@/lib/fallback-data";
+import { fallbackExperience, fallbackProjects } from "@/lib/fallback-data";
 
 // Revalidate every 60 seconds
 export const revalidate = 60;
@@ -19,7 +19,7 @@ export default async function Home() {
     }),
     client.fetch<TechStack[]>(techStackQuery).catch(err => {
       console.error("Error fetching techStack:", err);
-      return fallbackTechStack;
+      return [];
     }),
     client.fetch<Experience[]>(experienceQuery).catch(err => {
       console.error("Error fetching experience:", err);

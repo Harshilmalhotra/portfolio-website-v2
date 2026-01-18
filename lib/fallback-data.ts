@@ -30,48 +30,7 @@ export const fallbackStats: Stat[] = [
     { _id: "3", _type: "stat", _createdAt: "", _updatedAt: "", _rev: "", label: "Satisfaction", value: "99%" },
 ];
 
-export const fallbackTechStack: TechStack[] = [
-    // Languages
-    { _id: "l1", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "C", icon: "", category: "Languages" },
-    { _id: "l2", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "C++", icon: "", category: "Languages" },
-    { _id: "l3", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Python", icon: "", category: "Languages" },
-    { _id: "l4", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "JavaScript", icon: "", category: "Languages" },
 
-    // Core CS
-    { _id: "cs1", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Data Structures & Algorithms", icon: "", category: "Other" },
-    { _id: "cs2", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Object-Oriented Programming", icon: "", category: "Other" },
-    { _id: "cs3", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Operating Systems", icon: "", category: "Other" },
-    { _id: "cs4", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Linux", icon: "", category: "Tools" },
-    { _id: "cs5", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "SQL", icon: "", category: "Languages" },
-
-    // Backend & Web
-    { _id: "bw1", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Node.js", icon: "", category: "Backend" },
-    { _id: "bw2", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Express.js", icon: "", category: "Backend" },
-    { _id: "bw3", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "FastAPI", icon: "", category: "Backend" },
-    { _id: "bw4", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "React.js", icon: "", category: "Frontend" },
-    { _id: "bw5", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Next.js", icon: "", category: "Frontend" },
-    { _id: "bw6", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Tailwind CSS", icon: "", category: "Frontend" },
-
-    // Databases
-    { _id: "db1", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "PostgreSQL", icon: "", category: "Backend" },
-    { _id: "db2", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "MongoDB", icon: "", category: "Backend" },
-    { _id: "db3", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Supabase", icon: "", category: "Backend" },
-
-    // Cloud & DevOps
-    { _id: "cd1", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Docker", icon: "", category: "DevOps" },
-    { _id: "cd2", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "CI/CD", icon: "", category: "DevOps" },
-    { _id: "cd3", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "GitHub Actions", icon: "", category: "DevOps" },
-    { _id: "cd4", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Kubernetes", icon: "", category: "DevOps" },
-    { _id: "cd5", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "AWS (EC2, S3, Lambda)", icon: "", category: "DevOps" },
-    { _id: "cd6", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Azure", icon: "", category: "DevOps" },
-
-    // AI/ML
-    { _id: "ai1", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "TensorFlow", icon: "", category: "Other" },
-    { _id: "ai2", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "PyTorch", icon: "", category: "Other" },
-    { _id: "ai3", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "Scikit-learn", icon: "", category: "Other" },
-    { _id: "ai4", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "OpenCV", icon: "", category: "Other" },
-    { _id: "ai5", _type: "techStack", _createdAt: "", _updatedAt: "", _rev: "", name: "MediaPipe", icon: "", category: "Other" },
-];
 
 export const fallbackExperience: Experience[] = [
     {
