@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 
 const SECRET = process.env.SANITY_WEBHOOK_SECRET;
 
-const DOMAINS = ["https://harshilm.vercel.app", "https://harshil.is-a.dev"];
+const DOMAINS = ["https://harshilmalhotra.dev", "https://harshil.is-a.dev"];
 
 const GLOBAL_PATHS = [
     "/",
