@@ -93,7 +93,7 @@ import { useVisitorData } from "@/hooks/use-visitor-data";
                             )} />
                             <Button type="submit" className="w-full" disabled={isLoading}>{isLoading ? "Sending..." : "Send Message"}</Button>
                             <p className="text-xs text-muted-foreground text-center px-4">
-                                🔒 Your information is encrypted and securely stored. We value your privacy.
+                                🔒 Your details are kept private and secure. We value your privacy.
                             </p>
                         </form>
                     </Form>
