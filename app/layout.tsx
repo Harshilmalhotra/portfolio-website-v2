@@ -264,7 +264,7 @@ export async function generateMetadata(): Promise<Metadata> {
     ...dynamicKeywords,
   ];
 
-  const ogImage = profile.heroImage ? urlFor(profile.heroImage).width(1200).height(630).url() : "";
+  const ogImage = "/harshilLogo.jpg";
   const linkedIn = profile.socialLinks?.find((s: any) => s.platform?.toLowerCase().includes("linkedin"))?.url;
   const github = profile.socialLinks?.find((s: any) => s.platform?.toLowerCase().includes("github"))?.url;
 
