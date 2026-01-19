@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 import type { Metadata } from "next";
 import { groq } from "next-sanity";
 import { Inter, JetBrains_Mono } from "next/font/google"; // already exists
@@ -385,6 +386,19 @@ export default async function RootLayout({
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0V6PRNEBBL"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-0V6PRNEBBL');
+          `}
+        </Script>
       </body>
     </html>
   );
