@@ -16,9 +16,9 @@ export async function submitToIndexNow(urls: string[]) {
           "Content-Type": "application/json; charset=utf-8",
         },
         body: JSON.stringify({
-          host: "harshilm.vercel.app",
+          host: "harshilmalhotra.dev",
           key: process.env.INDEXNOW_KEY,
-          keyLocation: `https://harshilm.vercel.app/${process.env.INDEXNOW_KEY}.txt`,
+          keyLocation: `https://harshilmalhotra.dev/${process.env.INDEXNOW_KEY}.txt`,
           urlList: batch,
         }),
       });

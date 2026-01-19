@@ -16,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const routes = ["", "/about", "/projects", "/dashboard", "/palette"].map(
     (route) => ({
-      url: `https://harshilm.vercel.app${route}`,
+      url: `https://harshilmalhotra.dev${route}`,
       lastModified: new Date().toISOString().split("T")[0],
       changeFrequency: "weekly" as const,
       priority: route === "" ? 1 : 0.8,
@@ -24,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   const projectRoutes = projects.map((project: any) => ({
-    url: `https://harshilm.vercel.app/projects/${project.slug}`,
+    url: `https://harshilmalhotra.dev/projects/${project.slug}`,
     lastModified: project._updatedAt.split("T")[0],
     changeFrequency: "weekly" as const,
     priority: 0.6,
