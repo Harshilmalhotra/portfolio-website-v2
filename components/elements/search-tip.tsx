@@ -13,6 +13,9 @@ export function SearchTip() {
   const MotionButton = motion(Button);
 
   const playSound = () => {
+    // Check if sounds are muted via env flag
+    if (process.env.NEXT_PUBLIC_MUTE_SOUNDS === "true") return;
+
     try {
         const audio = new Audio("/airplane-chime.mp3");
         audio.volume = 1;
