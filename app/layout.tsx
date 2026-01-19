@@ -275,7 +275,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     keywords,
     authors: [{ name: profile.name || "Harshil Malhotra", url: linkedIn || github }],
-    metadataBase: new URL("https://harshilm.vercel.app"),
+    metadataBase: new URL("https://harshilmalhotra.dev"),
     alternates: {
       canonical: "/",
       languages: {
@@ -285,7 +285,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: "https://harshilm.vercel.app",
+      url: "https://harshilmalhotra.dev",
       siteName: `${profile.name || "Harshil Malhotra"} Portfolio`,
       images: [
         {
@@ -350,7 +350,7 @@ export default async function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.name || "Harshil Malhotra",
-    url: "https://harshilm.vercel.app",
+    url: "https://harshilmalhotra.dev",
     image: profile.heroImage ? urlFor(profile.heroImage).url() : "",
     sameAs: [
       ...(profile.socialLinks?.map((s: any) => s.url) || []),
