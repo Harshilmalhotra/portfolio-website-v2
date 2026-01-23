@@ -14,14 +14,19 @@ import { sanityFetch } from "@/lib/sanity.server";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projects = await sanityFetch<any[]>({ query, fallback: [] }) || [];
 
-  const routes = ["", "/about", "/projects", "/dashboard", "/palette"].map(
-    (route) => ({
-      url: `https://harshilmalhotra.dev${route}`,
-      lastModified: new Date().toISOString().split("T")[0],
-      changeFrequency: "weekly" as const,
-      priority: route === "" ? 1 : 0.8,
-    })
-  );
+  const routes = [
+    "",
+    "/about",
+    "/certifications",
+    "/links",
+    "/palette",
+    "/projects",
+  ].map((route) => ({
+    url: `https://harshilmalhotra.dev${route}`,
+    lastModified: new Date().toISOString().split("T")[0],
+    changeFrequency: "weekly" as const,
+    priority: route === "" ? 1 : 0.8,
+  }));
 
   const projectRoutes = projects.map((project: any) => ({
     url: `https://harshilmalhotra.dev/projects/${project.slug}`,
