@@ -21,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/links",
     "/palette",
     "/projects",
+    "/resume",
   ].map((route) => ({
     url: `https://harshilmalhotra.dev${route}`,
     lastModified: new Date().toISOString().split("T")[0],

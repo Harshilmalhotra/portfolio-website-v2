@@ -8,7 +8,7 @@ export function DownloadResumeButton() {
         e.preventDefault();
         
         // Use local file to avoid firewall restrictions
-        const resumeUrl = "/resume.pdf";
+        const resumeUrl = "/resume";
         
         // 1. Open in new tab (View)
         window.open(resumeUrl, "_blank", "noopener,noreferrer");

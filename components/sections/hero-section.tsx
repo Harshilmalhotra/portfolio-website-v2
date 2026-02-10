@@ -59,7 +59,7 @@ export function HeroSection() {
                                 <Mail className="h-6 w-6" />
                                 <span className="sr-only">Email</span>
                             </Link>
-                            <Link href="/resume.pdf" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                            <Link href="/resume" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                                 <FileText className="h-6 w-6" />
                                 <span className="sr-only">Resume</span>
                             </Link>
