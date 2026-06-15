@@ -328,6 +328,7 @@ import { searchEverythingQuery } from "@/lib/queries";
 import { SearchResults } from "@/types/search";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SearchTip } from "@/components/elements/search-tip";
+import { ClarityAnalytics } from "@/components/elements/clarity-analytics";
 
 // ...
 
@@ -380,6 +381,7 @@ export default async function RootLayout({
             <ScrollToTop />
             <SearchCommand data={searchData} />
             <SearchTip />
+            <ClarityAnalytics />
             {children}
         </ThemeProvider>
         <SpeedInsights />
